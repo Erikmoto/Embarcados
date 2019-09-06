@@ -3,9 +3,16 @@
 // includes da biblioteca driverlib
 #include "inc/hw_memmap.h"
 #include "driverlib/gpio.h"
+#include "driverlib/uart.h"
 #include "driverlib/sysctl.h"
+#include "driverlib/pin_map.h"
 #include "driverlib/systick.h"
+#include "utils/uartstdio.h"
+
+#include "system_TM4C1294.h"
+
 #include "gpio.h"
+#include "UARTInit.h"
 
 #define BIT0 (0x1)
 
@@ -104,41 +111,71 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-uint8_t LED_D1 = 0;
-uint8_t LED_A = 1;
+#define TAM_VET (200) //constante que determina o tamanho do vetor de leituras
 
-void SysTick_Handler(void){
-  LED_D1 ^= GPIO_PIN_1; // Troca estado do LED D1
-  GPIOPinWrite(GPIO_PORTN_BASE, GPIO_PIN_1, LED_D1); // Acende ou apaga LED D1
-  
-  if(LED_A == 0) {
-    LED_A = 1;
-  }
-  
-  PortA_Output(LED_A);
-  LED_A = LED_A << 1;
-  
-} // SysTick_Handler
+uint16_t i_vet; //Indice utilizado em loop para percorrer o vetor de leituras
+bool vet[TAM_VET]; //vetor que armazena as ultimas leituras
+uint8_t num_transicoes; //variável utilizada para contar o número de transições/bordas
+uint8_t num_baixos_altos[2]; //vetor para contar a quantidade de leituras em baixas e altas
+float k; //constante para conversão para segundos
+uint8_t n_altos; //armazena a quantidade de leituras altas
+uint8_t n_baixos; //armazena a quantidade de leituras baixas
+float periodo; //armazena o calculo do período
+float frequencia; //armazena o calculo da frequência
+float duty_cycle; //armazena o calculo do duty cycle
+
+void computaResultados() {
+    n_baixos = num_baixos_altos[0];
+    n_altos = num_baixos_altos[1];
+    periodo = k * (n_baixos + n_altos);
+    frequencia = 1 / periodo;
+    duty_cycle = n_altos / (n_altos + n_baixos);
+    
+    UARTprintf("444");
+}
 
 void main(void){
-  SysTickPeriodSet(12000000); // f = 1Hz para clock = 24MHz
   
   GPIO_Init();
-
-  SysTickIntEnable();
-  SysTickEnable();
+  UARTInit();
   
-  PortM_Output(BIT6);
-
   while(1){
-    if(GPIOPinRead(GPIO_PORTJ_BASE, GPIO_PIN_0) == GPIO_PIN_0) // Testa estado do push-button SW1
-      GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_4, 0); // Apaga LED D3
-    else
-      GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_4, GPIO_PIN_4); // Acende LED D3
-
-    if(GPIOPinRead(GPIO_PORTJ_BASE, GPIO_PIN_1) == GPIO_PIN_1) // Testa estado do push-button SW2
-      GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_0, 0); // Apaga LED D4
-    else
-      GPIOPinWrite(GPIO_PORTF_BASE, GPIO_PIN_0, GPIO_PIN_0); // Acende LED D4
-  } // while
+    i_vet = 0;
+    
+    while(i_vet < TAM_VET) {
+      vet[i_vet] = PortJ_Input();
+      i_vet++;
+    }
+    
+    i_vet = 1;
+    num_transicoes = 0;
+    num_baixos_altos[0] = 0;
+    num_baixos_altos[1] = 0;
+    
+    while(i_vet < TAM_VET) {
+      if(num_transicoes > 0) {
+        if(num_transicoes == 3) {
+          break;
+        }
+        
+        else {
+          num_baixos_altos[vet[i_vet - 1]]++;
+        }
+      }
+      
+      if(vet[i_vet] != vet[i_vet - 1]) {
+        num_transicoes++;
+        
+      }
+      
+      i_vet++;
+    }
+    
+    if(num_transicoes > 0) {
+          computaResultados();
+    }
+    else {
+      UARTprintf("Erro: Nenhuma borda detectada\n");
+    }
+  }
 } // main

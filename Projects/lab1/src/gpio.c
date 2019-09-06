@@ -42,16 +42,16 @@ void GPIO_Init(void) {
   while(!SysCtlPeripheralReady(SYSCTL_PERIPH_GPIOH));
   
   
-  GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE, BIT7 | BIT6 | BIT5 | BIT4); // LEDs e BCDs [BIT7 | BIT6 | BIT5 | BIT4]
-  GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE, BIT5 | BIT4); // Transitores BCDs [BIT5 | BIT4]
-  GPIOPinTypeGPIOOutput(GPIO_PORTE_BASE, BIT3 | BIT2 | BIT1 | BIT0); // Motor DC e Motor de Passo Bipolar [BIT3 | BIT2 | BIT1 | BIT0]
-  GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, BIT4 | BIT3 | BIT2 | BIT0); // PWMs dos Motores DC e de Passo Bipolar [BIT3 | BIT2] e LEDs Tiva [BIT4 | BIT0]
-  GPIOPinTypeGPIOOutput(GPIO_PORTH_BASE, BIT3 | BIT2 | BIT1 | BIT0); // Motor de Passo Unipolar [BIT3 | BIT2 | BIT1 | BIT0]
-  GPIOPinTypeGPIOOutput(GPIO_PORTK_BASE, BIT7 | BIT6 | BIT5 | BIT4 | BIT3 | BIT2 | BIT1 | BIT0); // Display LCD
-  GPIOPinTypeGPIOOutput(GPIO_PORTL_BASE, BIT3 | BIT2 | BIT1 | BIT0); // Teclado Matricial [BIT3 | BIT2 | BIT1 | BIT0]
-  GPIOPinTypeGPIOOutput(GPIO_PORTM_BASE, BIT6 | BIT2 | BIT1 | BIT0); // Transistor LEDs [BIT6] e Controle LCD [BIT2 | BIT1 | BIT0]
-  GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, BIT1 | BIT0); //BIT0 | BIT1
-  GPIOPinTypeGPIOOutput(GPIO_PORTQ_BASE, BIT3 | BIT2 | BIT1 | BIT0); // LEDs e BCDs [BIT3 | BIT2 | BIT1 | BIT0]
+  //GPIOPinTypeGPIOOutput(GPIO_PORTA_BASE, BIT7 | BIT6 | BIT5 | BIT4); // LEDs e BCDs [BIT7 | BIT6 | BIT5 | BIT4]
+  //GPIOPinTypeGPIOOutput(GPIO_PORTB_BASE, BIT5 | BIT4); // Transitores BCDs [BIT5 | BIT4]
+  //GPIOPinTypeGPIOOutput(GPIO_PORTE_BASE, BIT3 | BIT2 | BIT1 | BIT0); // Motor DC e Motor de Passo Bipolar [BIT3 | BIT2 | BIT1 | BIT0]
+  //GPIOPinTypeGPIOOutput(GPIO_PORTF_BASE, BIT4 | BIT3 | BIT2 | BIT0); // PWMs dos Motores DC e de Passo Bipolar [BIT3 | BIT2] e LEDs Tiva [BIT4 | BIT0]
+  //GPIOPinTypeGPIOOutput(GPIO_PORTH_BASE, BIT3 | BIT2 | BIT1 | BIT0); // Motor de Passo Unipolar [BIT3 | BIT2 | BIT1 | BIT0]
+  //GPIOPinTypeGPIOOutput(GPIO_PORTK_BASE, BIT7 | BIT6 | BIT5 | BIT4 | BIT3 | BIT2 | BIT1 | BIT0); // Display LCD
+  //GPIOPinTypeGPIOOutput(GPIO_PORTL_BASE, BIT3 | BIT2 | BIT1 | BIT0); // Teclado Matricial [BIT3 | BIT2 | BIT1 | BIT0]
+  //GPIOPinTypeGPIOOutput(GPIO_PORTM_BASE, BIT6 | BIT2 | BIT1 | BIT0); // Transistor LEDs [BIT6] e Controle LCD [BIT2 | BIT1 | BIT0]
+  //GPIOPinTypeGPIOOutput(GPIO_PORTN_BASE, BIT1 | BIT0); //BIT0 | BIT1
+  //GPIOPinTypeGPIOOutput(GPIO_PORTQ_BASE, BIT3 | BIT2 | BIT1 | BIT0); // LEDs e BCDs [BIT3 | BIT2 | BIT1 | BIT0]
   
   GPIOPinTypeGPIOInput(GPIO_PORTC_BASE, BIT7 | BIT6 | BIT5 | BIT4); // Teclado Matricial [BIT7 | BIT6 | BIT5 | BIT4]
   GPIOPinTypeGPIOInput(GPIO_PORTE_BASE, BIT5 | BIT4); // Conversor A/D - {Sensor BPM [BIT5] / Potenciômetro [BIT4]}

@@ -2390,4 +2390,10 @@
     <file>
         <name>$PROJ_DIR$\src\TM4C1294NCPDT.h</name>
     </file>
+    <file>
+        <name>$PROJ_DIR$\src\UARTInit.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\src\uartstdio.c</name>
+    </file>
 </project>
