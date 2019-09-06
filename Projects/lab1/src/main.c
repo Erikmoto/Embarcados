@@ -111,7 +111,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#define TAM_VET (200) //constante que determina o tamanho do vetor de leituras
+#define TAM_VET (2000) //constante que determina o tamanho do vetor de leituras
 
 uint16_t i_vet; //Indice utilizado em loop para percorrer o vetor de leituras
 bool vet[TAM_VET]; //vetor que armazena as ultimas leituras
@@ -131,7 +131,9 @@ void computaResultados() {
     frequencia = 1 / periodo;
     duty_cycle = n_altos / (n_altos + n_baixos);
     
-    UARTprintf("444");
+    UARTprintf("Duty cycle: %d\%\%\n",duty_cycle);
+    UARTprintf("Periodo: %ds\n",periodo);
+    UARTprintf("Frequencia: %dhz\n\n",frequencia);
 }
 
 void main(void){
@@ -143,7 +145,7 @@ void main(void){
     i_vet = 0;
     
     while(i_vet < TAM_VET) {
-      vet[i_vet] = PortJ_Input();
+      vet[i_vet] = PortJ_Input() & BIT0;
       i_vet++;
     }
     
@@ -176,6 +178,7 @@ void main(void){
     }
     else {
       UARTprintf("Erro: Nenhuma borda detectada\n");
+      
     }
   }
 } // main
