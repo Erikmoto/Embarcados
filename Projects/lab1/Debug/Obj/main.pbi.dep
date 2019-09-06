@@ -1,0 +1,12 @@
+main.pbi: \
+  C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\Projects\lab1\src\main.c \
+  D:\Programas\IAR\arm\inc\c\stdint.h \
+  D:\Programas\IAR\arm\inc\c\ycheck.h D:\Programas\IAR\arm\inc\c\yvals.h \
+  D:\Programas\IAR\arm\inc\c\DLib_Defaults.h \
+  D:\Programas\IAR\arm\inc\c\DLib_Product.h \
+  D:\Programas\IAR\arm\inc\c\stdbool.h \
+  C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\Projects\lab1\..\..\TivaWare_C_Series-2.1.4.178\inc/hw_memmap.h \
+  C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\Projects\lab1\..\..\TivaWare_C_Series-2.1.4.178\driverlib/gpio.h \
+  C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\Projects\lab1\..\..\TivaWare_C_Series-2.1.4.178\driverlib/sysctl.h \
+  C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\Projects\lab1\..\..\TivaWare_C_Series-2.1.4.178\driverlib/systick.h \
+  C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\Projects\lab1\src/gpio.h
