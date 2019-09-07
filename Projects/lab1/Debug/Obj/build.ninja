@@ -23,7 +23,12 @@ rule browsedata
 build gpio.pbi : index gpio.xcl
 build main.pbi : index main.xcl
 build system_TM4C1294_TW.pbi : index system_TM4C1294_TW.xcl
-build lab1.pbd : link gpio.pbi main.pbi system_TM4C1294_TW.pbi
+build UARTInit.pbi : index UARTInit.xcl
+build uartstdio.pbi : index uartstdio.xcl
+build lab1_part0.pbi : link gpio.pbi main.pbi
+build lab1_part1.pbi : link system_TM4C1294_TW.pbi UARTInit.pbi
+build lab1_part2.pbi : link uartstdio.pbi
+build lab1.pbd : link lab1_part0.pbi lab1_part1.pbi lab1_part2.pbi
 build lab1.pbw : browsedata lab1.pbd
 
 

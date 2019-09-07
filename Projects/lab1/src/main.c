@@ -1,3 +1,13 @@
+// -------------------------------------------------------------------------------
+
+// Autores:
+
+// Caio Alessandro Resnauer
+// Erik Ryuichi Yamamoto
+// Victor Jordão
+
+// -------------------------------------------------------------------------------
+
 #include <stdint.h>
 #include <stdbool.h>
 // includes da biblioteca driverlib

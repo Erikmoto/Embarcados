@@ -1,27 +1,28 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.30.1.114/W32 for ARM                  06/Sep/2019  17:30:08
-# Copyright 2007-2018 IAR Systems AB.
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  06/Sep/2019  23:22:58
+# Copyright 2007-2019 IAR Systems AB.
 #
-#    Output file  =  
-#        E:\Documents\GitHub\Embarcados\Projects\lab1\Debug\Exe\lab1.out
-#    Map file     =  
-#        E:\Documents\GitHub\Embarcados\Projects\lab1\Debug\List\lab1.map
-#    Command line =  
-#        -f C:\Users\DAELN\AppData\Local\Temp\EW2D39.tmp
-#        (E:\Documents\GitHub\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\ewarm\Exe\driverlib.a
-#        E:\Documents\GitHub\Embarcados\Projects\lab1\Debug\Obj\gpio.o
-#        E:\Documents\GitHub\Embarcados\Projects\lab1\Debug\Obj\main.o
-#        E:\Documents\GitHub\Embarcados\Projects\lab1\Debug\Obj\startup_TM4C1294.o
-#        E:\Documents\GitHub\Embarcados\Projects\lab1\Debug\Obj\system_TM4C1294_TW.o
-#        E:\Documents\GitHub\Embarcados\Projects\lab1\Debug\Obj\UARTInit.o
-#        E:\Documents\GitHub\Embarcados\Projects\lab1\Debug\Obj\uartstdio.o
+#    Output file  =
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab1\Debug\Exe\lab1.out
+#    Map file     =
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab1\Debug\List\lab1.map
+#    Command line =
+#        -f C:\Users\ryuic\AppData\Local\Temp\EWF08A.tmp
+#        (C:\Users\ryuic\Downloads\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\ewarm\Exe\driverlib.a
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab1\Debug\Obj\gpio.o
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab1\Debug\Obj\main.o
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab1\Debug\Obj\startup_TM4C1294.o
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab1\Debug\Obj\system_TM4C1294_TW.o
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab1\Debug\Obj\UARTInit.o
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab1\Debug\Obj\uartstdio.o
 #        --no_out_extension -o
-#        E:\Documents\GitHub\Embarcados\Projects\lab1\Debug\Exe\lab1.out --map
-#        E:\Documents\GitHub\Embarcados\Projects\lab1\Debug\List\lab1.map
-#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
-#        8.1\arm\config\linker\TexasInstruments\TM4C1294NC.icf" --semihosting
-#        --entry __iar_program_start --vfe --text_out locale)
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab1\Debug\Exe\lab1.out
+#        --map
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab1\Debug\List\lab1.map
+#        --config
+#        D:\Programas\IAR\arm\config\linker\TexasInstruments\TM4C1294NC.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
 #
 ###############################################################################
 
@@ -47,7 +48,7 @@ was not specified.
 *** PLACEMENT SUMMARY
 ***
 
-"A0":  place at 0x0 { ro section .intvec };
+"A0":  place at address 0x0 { ro section .intvec };
 "P1":  place in [from 0x0 to 0xf'ffff] { ro };
 define block CSTACK with size = 32K, alignment = 8 { };
 define block HEAP with size = 64K, alignment = 8 { };
@@ -150,15 +151,15 @@ command line/config:
     -----------------------------------------------
     Total:
 
-E:\Documents\GitHub\Embarcados\Projects\lab1\Debug\Obj: [1]
+C:\Users\ryuic\Downloads\Embarcados\Projects\lab1\Debug\Obj: [1]
     UARTInit.o                 92
     gpio.o                    500
-    main.o                    356       88    2 023
+    main.o                    356       88    2'023
     startup_TM4C1294.o        982
     system_TM4C1294_TW.o       32                 4
     uartstdio.o               594       56        4
     -----------------------------------------------
-    Total:                  2 556      144    2 031
+    Total:                  2'556      144    2'031
 
 dl7M_tln.a: [2]
     exit.o                      4
@@ -171,7 +172,7 @@ driverlib.a: [3]
     sysctl.o                  684      588
     uart.o                    176
     -----------------------------------------------
-    Total:                  1 292      732
+    Total:                  1'292      732
 
 m7M_tls.a: [4]
     FltDiv.o                   18
@@ -196,9 +197,9 @@ shb_l.a: [6]
     Total:                     20
 
     Gaps                        4
-    Linker created                      16   32 768
+    Linker created                      16   32'768
 ---------------------------------------------------
-    Grand Total:            4 152      892   34 799
+    Grand Total:            4'152      892   34'799
 
 
 *******************************************************************************
@@ -282,16 +283,16 @@ periodo                 0x2000'07d4    0x4  Data  Gb  main.o [1]
 vet                     0x2000'0000  0x7d0  Data  Gb  main.o [1]
 
 
-[1] = E:\Documents\GitHub\Embarcados\Projects\lab1\Debug\Obj
+[1] = C:\Users\ryuic\Downloads\Embarcados\Projects\lab1\Debug\Obj
 [2] = dl7M_tln.a
 [3] = driverlib.a
 [4] = m7M_tls.a
 [5] = rt7M_tl.a
 [6] = shb_l.a
 
-   4 152 bytes of readonly  code memory
+   4'152 bytes of readonly  code memory
      892 bytes of readonly  data memory
-  34 799 bytes of readwrite data memory
+  34'799 bytes of readwrite data memory
 
 Errors: none
 Warnings: none
