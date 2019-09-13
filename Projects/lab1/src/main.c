@@ -121,36 +121,42 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#define TAM_VET (2000) //constante que determina o tamanho do vetor de leituras
+#define TAM_VET (24000) //constante que determina o tamanho do vetor de leituras
 
 uint16_t i_vet; //Indice utilizado em loop para percorrer o vetor de leituras
 bool vet[TAM_VET]; //vetor que armazena as ultimas leituras
 uint8_t num_transicoes; //variável utilizada para contar o número de transições/bordas
 uint8_t num_baixos_altos[2]; //vetor para contar a quantidade de leituras em baixas e altas
-float k; //constante para conversão para milisegundos
+double k; //constante para conversão para milisegundos
 uint8_t n_altos; //armazena a quantidade de leituras altas
 uint8_t n_baixos; //armazena a quantidade de leituras baixas
-float periodo; //armazena o calculo do período
-float frequencia; //armazena o calculo da frequência
-float duty_cycle; //armazena o calculo do duty cycle
+double periodo; //armazena o calculo do período
+double frequencia; //armazena o calculo da frequência
+double duty_cycle; //armazena o calculo do duty cycle
 
 void computaResultados() {
-  k = 3*1000/24000000;
+  k = 1;//3*1000/24000000;
   n_baixos = num_baixos_altos[0];
   n_altos = num_baixos_altos[1];
   periodo = k * (n_baixos + n_altos);
-  frequencia = 1 / periodo;
-  duty_cycle = n_altos / (n_altos + n_baixos);
+  frequencia = (1 / periodo) * 1000;
+  duty_cycle = (double)n_altos / (n_altos + n_baixos) * 100;
   
-  UARTprintf("Duty cycle: %.3f\%\%\n",duty_cycle);
-  UARTprintf("Periodo: %.3fs\n",periodo);
-  UARTprintf("Frequencia: %.3fhz\n\n",frequencia);
+  UARTprintf("Periodo: %d us\n",(uint16_t)periodo);
+  UARTprintf("Frequencia: %d kHz\n", (uint16_t)frequencia);
+  UARTprintf("Duty cycle: \%d \%\%\n\n", (uint8_t)duty_cycle);
 }
 
 void adquireAmostras() {
+  uint16_t delay;
+  
   while(i_vet < TAM_VET) {
-    vet[i_vet] = PortJ_Input() & BIT0;
+    vet[i_vet] = PortC_Input() & BIT7 >> 7;
     i_vet++;
+    
+    for(delay = 0; delay < 100; delay++) {
+    
+    }
   }
 }
 
@@ -193,7 +199,7 @@ void main(void){
     contaBaixosAltos();
     
     if(num_transicoes > 0) {
-          computaResultados();
+       computaResultados();
     }
     else {
       UARTprintf("Erro: Nenhuma borda detectada\n");

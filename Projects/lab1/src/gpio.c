@@ -91,7 +91,7 @@ uint32_t PortC_Input(void) {
 // -------------------------------------------------------------------------------
 
 uint32_t PortJ_Input(void) {
-  return GPIOPinRead(GPIO_PORTE_BASE, BIT5 | BIT4);
+  return GPIOPinRead(GPIO_PORTJ_BASE, BIT1 | BIT0);
 }
 
 // -------------------------------------------------------------------------------
