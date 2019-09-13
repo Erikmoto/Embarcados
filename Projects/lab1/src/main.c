@@ -135,15 +135,43 @@ float frequencia; //armazena o calculo da frequência
 float duty_cycle; //armazena o calculo do duty cycle
 
 void computaResultados() {
-    n_baixos = num_baixos_altos[0];
-    n_altos = num_baixos_altos[1];
-    periodo = k * (n_baixos + n_altos);
-    frequencia = 1 / periodo;
-    duty_cycle = n_altos / (n_altos + n_baixos);
+  n_baixos = num_baixos_altos[0];
+  n_altos = num_baixos_altos[1];
+  periodo = k * (n_baixos + n_altos);
+  frequencia = 1 / periodo;
+  duty_cycle = n_altos / (n_altos + n_baixos);
+  
+  UARTprintf("Duty cycle: %.3f\%\%\n",duty_cycle);
+  UARTprintf("Periodo: %.3fs\n",periodo);
+  UARTprintf("Frequencia: %.3fhz\n\n",frequencia);
+}
+
+void adquireAmostras() {
+  while(i_vet < TAM_VET) {
+    vet[i_vet] = PortJ_Input() & BIT0;
+    i_vet++;
+  }
+}
+
+void contaBaixosAltos() {
+  while(i_vet < TAM_VET) {
+    if(num_transicoes > 0) {
+      if(num_transicoes == 3) {
+        break;
+      }
+      
+      else {
+        num_baixos_altos[vet[i_vet - 1]]++;
+      }
+    }
     
-    UARTprintf("Duty cycle: %d\%\%\n",duty_cycle);
-    UARTprintf("Periodo: %ds\n",periodo);
-    UARTprintf("Frequencia: %dhz\n\n",frequencia);
+    if(vet[i_vet] != vet[i_vet - 1]) {
+      num_transicoes++;
+      
+    }
+    
+    i_vet++;
+  }
 }
 
 void main(void){
@@ -154,34 +182,14 @@ void main(void){
   while(1){
     i_vet = 0;
     
-    while(i_vet < TAM_VET) {
-      vet[i_vet] = PortJ_Input() & BIT0;
-      i_vet++;
-    }
+    adquireAmostras();
     
     i_vet = 1;
     num_transicoes = 0;
     num_baixos_altos[0] = 0;
     num_baixos_altos[1] = 0;
     
-    while(i_vet < TAM_VET) {
-      if(num_transicoes > 0) {
-        if(num_transicoes == 3) {
-          break;
-        }
-        
-        else {
-          num_baixos_altos[vet[i_vet - 1]]++;
-        }
-      }
-      
-      if(vet[i_vet] != vet[i_vet - 1]) {
-        num_transicoes++;
-        
-      }
-      
-      i_vet++;
-    }
+    contaBaixosAltos();
     
     if(num_transicoes > 0) {
           computaResultados();
