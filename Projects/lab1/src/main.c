@@ -127,25 +127,23 @@ uint16_t i_vet; //Indice utilizado em loop para percorrer o vetor de leituras
 bool vet[TAM_VET]; //vetor que armazena as ultimas leituras
 uint8_t num_transicoes; //variável utilizada para contar o número de transições/bordas
 uint8_t num_baixos_altos[2]; //vetor para contar a quantidade de leituras em baixas e altas
-float k; //constante para conversão para milisegundos
+float k; //constante para conversão para segundos
 uint8_t n_altos; //armazena a quantidade de leituras altas
 uint8_t n_baixos; //armazena a quantidade de leituras baixas
 float periodo; //armazena o calculo do período
 float frequencia; //armazena o calculo da frequência
 float duty_cycle; //armazena o calculo do duty cycle
 
-void computaResultados() 
-{  
-    k = 3*1000/24000000;
+void computaResultados() {
     n_baixos = num_baixos_altos[0];
     n_altos = num_baixos_altos[1];
     periodo = k * (n_baixos + n_altos);
     frequencia = 1 / periodo;
     duty_cycle = n_altos / (n_altos + n_baixos);
     
-    UARTprintf("Duty cycle: %f\%\%\n",duty_cycle);
-    UARTprintf("Periodo: %fs\n",periodo);
-    UARTprintf("Frequencia: %fhz\n\n",frequencia);
+    UARTprintf("Duty cycle: %d\%\%\n",duty_cycle);
+    UARTprintf("Periodo: %ds\n",periodo);
+    UARTprintf("Frequencia: %dhz\n\n",frequencia);
 }
 
 void main(void){
