@@ -121,7 +121,7 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#define TAM_VET (24000) //constante que determina o tamanho do vetor de leituras
+#define TAM_VET (12000) //constante que determina o tamanho do vetor de leituras
 
 uint16_t i_vet; //Indice utilizado em loop para percorrer o vetor de leituras
 bool vet[TAM_VET]; //vetor que armazena as ultimas leituras
@@ -135,14 +135,16 @@ double frequencia; //armazena o calculo da frequência
 double duty_cycle; //armazena o calculo do duty cycle
 
 void computaResultados() {
-  k = 1;//3*1000/24000000;
+  k = 42;//3*1000/24000000;
   n_baixos = num_baixos_altos[0];
   n_altos = num_baixos_altos[1];
   periodo = k * (n_baixos + n_altos);
   frequencia = (1 / periodo) * 1000;
-  duty_cycle = (double)n_altos / (n_altos + n_baixos) * 100;
+  duty_cycle = (double)(n_altos / (n_altos + n_baixos)) * 100;
   
-  UARTprintf("Periodo: %d us\n",(uint16_t)periodo);
+  UARTprintf("Altos: %d\n", n_altos);
+  UARTprintf("Baixos: %d\n", n_baixos);
+  UARTprintf("Periodo: %d ns\n",(uint16_t)periodo);
   UARTprintf("Frequencia: %d kHz\n", (uint16_t)frequencia);
   UARTprintf("Duty cycle: \%d \%\%\n\n", (uint8_t)duty_cycle);
 }
@@ -151,11 +153,12 @@ void adquireAmostras() {
   uint16_t delay;
   
   while(i_vet < TAM_VET) {
-    vet[i_vet] = PortC_Input() & BIT7 >> 7;
+    vet[i_vet] = PortC_Input();
+    PortA_Output(PortC_Input());
     i_vet++;
     
-    for(delay = 0; delay < 100; delay++) {
-    
+    for(delay = 0; delay < 1; delay++) {
+      
     }
   }
 }
@@ -185,7 +188,7 @@ void main(void){
   
   GPIO_Init();
   UARTInit();
-  
+  PortM_Output(BIT6);
   while(1){
     i_vet = 0;
     
