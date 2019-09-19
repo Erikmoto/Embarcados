@@ -121,32 +121,32 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#define TAM_VET (12000) //constante que determina o tamanho do vetor de leituras
+#define TAM_VET (2400) //constante que determina o tamanho do vetor de leituras
 
 uint16_t i_vet; //Indice utilizado em loop para percorrer o vetor de leituras
 bool vet[TAM_VET]; //vetor que armazena as ultimas leituras
 uint8_t num_transicoes; //variável utilizada para contar o número de transições/bordas
-uint8_t num_baixos_altos[2]; //vetor para contar a quantidade de leituras em baixas e altas
+uint16_t num_baixos_altos[2]; //vetor para contar a quantidade de leituras em baixas e altas
 double k; //constante para conversão para milisegundos
-uint8_t n_altos; //armazena a quantidade de leituras altas
-uint8_t n_baixos; //armazena a quantidade de leituras baixas
+uint16_t n_altos; //armazena a quantidade de leituras altas
+uint16_t n_baixos; //armazena a quantidade de leituras baixas
 double periodo; //armazena o calculo do período
 double frequencia; //armazena o calculo da frequência
 double duty_cycle; //armazena o calculo do duty cycle
 
 void computaResultados() {
-  k = 42;//3*1000/24000000;
+  k = 91.3;//3*1000/24000000;
   n_baixos = num_baixos_altos[0];
   n_altos = num_baixos_altos[1];
   periodo = k * (n_baixos + n_altos);
-  frequencia = (1 / periodo) * 1000;
-  duty_cycle = (double)(n_altos / (n_altos + n_baixos)) * 100;
+  frequencia = (double)(1000000 / periodo);
+  duty_cycle = ((double)n_altos / (n_altos + n_baixos)) * 1000;
   
   UARTprintf("Altos: %d\n", n_altos);
   UARTprintf("Baixos: %d\n", n_baixos);
-  UARTprintf("Periodo: %d ns\n",(uint16_t)periodo);
-  UARTprintf("Frequencia: %d kHz\n", (uint16_t)frequencia);
-  UARTprintf("Duty cycle: \%d \%\%\n\n", (uint8_t)duty_cycle);
+  UARTprintf("Periodo: %d ns\n",(uint32_t)periodo);
+  UARTprintf("Frequencia: %d kHz\n", (uint32_t)frequencia);
+  UARTprintf("Duty cycle: \%d ‰(por milhar)\n\n", (uint16_t)duty_cycle);
 }
 
 void adquireAmostras() {
@@ -166,7 +166,7 @@ void adquireAmostras() {
 void contaBaixosAltos() {
   while(i_vet < TAM_VET) {
     if(num_transicoes > 0) {
-      if(num_transicoes == 3) {
+      if(num_transicoes == 101) {
         break;
       }
       
@@ -185,10 +185,10 @@ void contaBaixosAltos() {
 }
 
 void main(void){
-  
   GPIO_Init();
   UARTInit();
   PortM_Output(BIT6);
+  
   while(1){
     i_vet = 0;
     

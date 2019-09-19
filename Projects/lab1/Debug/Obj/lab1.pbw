@@ -19401,7 +19401,7 @@
     "defdec": "Dec",
     "display": "num_baixos_altos",
     "location": {
-      "column": "9",
+      "column": "10",
       "line": "129",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab1\\src\\main.c"
     },
@@ -19429,7 +19429,7 @@
     "defdec": "Dec",
     "display": "n_altos",
     "location": {
-      "column": "9",
+      "column": "10",
       "line": "131",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab1\\src\\main.c"
     },
@@ -19443,7 +19443,7 @@
     "defdec": "Dec",
     "display": "n_baixos",
     "location": {
-      "column": "9",
+      "column": "10",
       "line": "132",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab1\\src\\main.c"
     },
@@ -19522,7 +19522,7 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@7870@F@adquireAmostras@delay",
+    "ID": "c:main.c@7892@F@adquireAmostras@delay",
     "What": "Variable",
     "defdec": "Def",
     "display": "delay",
