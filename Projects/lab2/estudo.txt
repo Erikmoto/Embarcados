@@ -1,1 +1,4 @@
 Estudo da plataforma e planejamento da solução
+
+► Manual do Microcontrolador Tiva TM4C1294NCPDT → Capítulo 13 - General-Purpose Timers / Página 955
+► 
