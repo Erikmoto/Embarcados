@@ -760,7 +760,7 @@
                     <item>num_transicoes</item>
                     <item>k</item>
                     <item>SystemCoreClock</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>

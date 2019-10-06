@@ -1,0 +1,35 @@
+#Generating source browse information for project lab2
+
+
+#Abbreviations
+cc = D$:\Programas\IAR\common\bin\SourceIndexer.exe
+ll = D$:\Programas\IAR\common\bin\PbdLink.exe
+bd = D$:\Programas\IAR\common\bin\makeBrowseData.exe
+
+
+
+#Rules
+rule index
+  depfile = $out.dep
+  command = $cc -out=$out -f $in
+rule link
+  command = $ll -M $out $in
+rule browsedata
+  command = $bd $in -output  $out
+
+
+
+#Build steps
+build gpio.pbi : index gpio.xcl
+build main.pbi : index main.xcl
+build system_TM4C1294_TW.pbi : index system_TM4C1294_TW.xcl
+build TimerInit.pbi : index TimerInit.xcl
+build UARTInit.pbi : index UARTInit.xcl
+build uartstdio.pbi : index uartstdio.xcl
+build lab2_part0.pbi : link gpio.pbi main.pbi
+build lab2_part1.pbi : link system_TM4C1294_TW.pbi TimerInit.pbi
+build lab2_part2.pbi : link UARTInit.pbi uartstdio.pbi
+build lab2.pbd : link lab2_part0.pbi lab2_part1.pbi lab2_part2.pbi
+build lab2.pbw : browsedata lab2.pbd
+
+

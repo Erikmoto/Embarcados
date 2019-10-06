@@ -1,0 +1,280 @@
+###############################################################################
+#
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  04/Oct/2019  17:33:13
+# Copyright 2007-2019 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\Debug\Exe\lab2.out
+#    Map file     =
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\Debug\List\lab2.map
+#    Command line =
+#        -f C:\Users\ryuic\AppData\Local\Temp\EW6ED1.tmp
+#        (C:\Users\ryuic\Downloads\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\ewarm\Exe\driverlib.a
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\Debug\Obj\gpio.o
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\Debug\Obj\main.o
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\Debug\Obj\startup_TM4C1294.o
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\Debug\Obj\system_TM4C1294_TW.o
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\Debug\Obj\TimerInit.o
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\Debug\Obj\UARTInit.o
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\Debug\Obj\uartstdio.o
+#        --no_out_extension -o
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\Debug\Exe\lab2.out
+#        --map
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\Debug\List\lab2.map
+#        --config
+#        D:\Programas\IAR\arm\config\linker\TexasInstruments\TM4C1294NC.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0xf'ffff] { ro };
+define block CSTACK with size = 32K, alignment = 8 { };
+define block HEAP with size = 64K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2003'ffff] {
+          rw, block CSTACK, block HEAP };
+
+  Section          Kind         Address    Size  Object
+  -------          ----         -------    ----  ------
+"A0":                                     0x3c0
+  .intvec          ro code          0x0   0x3c0  startup_TM4C1294.o [1]
+                                - 0x3c0   0x3c0
+
+"P1":                                     0xe2c
+  .text            ro code        0x3c0   0x2ac  sysctl.o [3]
+  .text            ro code        0x66c   0x1e0  gpio.o [3]
+  .rodata          const          0x84c   0x1b0  sysctl.o [3]
+  .text            ro code        0x9fc   0x1a4  gpio.o [1]
+  .text            ro code        0xba0    0xdc  timer.o [3]
+  .text            ro code        0xc7c    0xac  interrupt.o [3]
+  .rodata          const          0xd28    0xa0  timer.o [3]
+  .text            ro code        0xdc8    0xa0  uart.o [3]
+  .rodata          const          0xe68    0x90  gpio.o [3]
+  .text            ro code        0xef8    0x78  TimerInit.o [1]
+  .rodata          const          0xf70    0x6c  sysctl.o [3]
+  .text            ro code        0xfdc    0x5c  UARTInit.o [1]
+  .text            ro code       0x1038    0x54  uartstdio.o [1]
+  .text            ro code       0x108c    0x3a  zero_init3.o [5]
+  .text            ro code       0x10c6     0x2  startup_TM4C1294.o [1]
+  .rodata          const         0x10c8    0x30  sysctl.o [3]
+  .text            ro code       0x10f8    0x28  data_init.o [5]
+  .iar.init_table  const         0x1120    0x10  - Linker created -
+  .text            ro code       0x1130    0x20  system_TM4C1294_TW.o [1]
+  .text            ro code       0x1150    0x1e  cmain.o [5]
+  .text            ro code       0x116e     0x4  low_level_init.o [2]
+  .text            ro code       0x1174    0x1c  main.o [1]
+  .text            ro code       0x1190     0x4  exit.o [2]
+  .text            ro code       0x1194     0xa  cexit.o [5]
+  .text            ro code       0x11a0    0x14  exit.o [6]
+  .text            ro code       0x11b4    0x14  startup_TM4C1294.o [1]
+  .rodata          const         0x11c8     0xc  uartstdio.o [1]
+  .rodata          const         0x11d4     0xc  uartstdio.o [1]
+  .text            ro code       0x11e0     0xc  cstartup_M.o [5]
+  .rodata          const         0x11ec     0x0  zero_init3.o [5]
+                               - 0x11ec   0xe2c
+
+"P2", part 1 of 2:                          0x4
+  .bss             zero     0x2000'0000     0x4  uartstdio.o [1]
+                          - 0x2000'0004     0x4
+
+"P2", part 2 of 2:                       0x8270
+  VTABLE           uninit   0x2000'0400   0x26c  interrupt.o [3]
+  .noinit          uninit   0x2000'066c     0x4  system_TM4C1294_TW.o [1]
+  CSTACK                    0x2000'0670  0x8000  <Block>
+    CSTACK         uninit   0x2000'0670  0x8000  <Block tail>
+                          - 0x2000'8670  0x8270
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+       0x11ec     0xf'ffff  0xf'ee14
+  0x2000'0004  0x2000'03ff     0x3fc
+  0x2000'8670  0x2003'ffff  0x3'7990
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x4:
+          0x2000'0000   0x4
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                ro code  ro data  rw data
+    ------                -------  -------  -------
+command line/config:
+    -----------------------------------------------
+    Total:
+
+C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\Debug\Obj: [1]
+    TimerInit.o               120
+    UARTInit.o                 92
+    gpio.o                    420
+    main.o                     28
+    startup_TM4C1294.o        982
+    system_TM4C1294_TW.o       32                 4
+    uartstdio.o                84       24        4
+    -----------------------------------------------
+    Total:                  1'758       24        8
+
+dl7M_tln.a: [2]
+    exit.o                      4
+    low_level_init.o            4
+    -----------------------------------------------
+    Total:                      8
+
+driverlib.a: [3]
+    gpio.o                    480      144
+    interrupt.o               172               620
+    sysctl.o                  684      588
+    timer.o                   220      160
+    uart.o                    160
+    -----------------------------------------------
+    Total:                  1'716      892      620
+
+m7M_tls.a: [4]
+    -----------------------------------------------
+    Total:
+
+rt7M_tl.a: [5]
+    cexit.o                    10
+    cmain.o                    30
+    cstartup_M.o               12
+    data_init.o                40
+    zero_init3.o               58
+    -----------------------------------------------
+    Total:                    150
+
+shb_l.a: [6]
+    exit.o                     20
+    -----------------------------------------------
+    Total:                     20
+
+    Gaps                        4
+    Linker created                      16   32'768
+---------------------------------------------------
+    Grand Total:            3'656      932   33'396
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base        0x1120          --   Gb  - Linker created -
+.iar.init_table$$Limit       0x1130          --   Gb  - Linker created -
+?main                        0x1151         Code  Gb  cmain.o [5]
+CSTACK$$Base            0x2000'0670          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'8670          --   Gb  - Linker created -
+GPIODirModeSet                0x66d   0x28  Code  Gb  gpio.o [3]
+GPIOPadConfigSet              0x695  0x102  Code  Gb  gpio.o [3]
+GPIOPinConfigure              0x80b   0x36  Code  Gb  gpio.o [3]
+GPIOPinTypeGPIOInput          0x7a3   0x14  Code  Gb  gpio.o [3]
+GPIOPinTypeGPIOOutput         0x7b7    0xa  Code  Gb  gpio.o [3]
+GPIOPinTypeTimer              0x7db   0x14  Code  Gb  gpio.o [3]
+GPIOPinTypeUART               0x7ef   0x14  Code  Gb  gpio.o [3]
+GPIOPinWrite                  0x797    0x8  Code  Gb  gpio.o [3]
+GPIO_Init                     0x9fd  0x142  Code  Gb  gpio.o [1]
+IntEnable                     0xca5   0x46  Code  Gb  interrupt.o [3]
+IntRegister                   0xc7d   0x28  Code  Gb  interrupt.o [3]
+PortA_Output                  0xb3f   0x12  Code  Gb  gpio.o [1]
+PortM_Output                  0xb51   0x10  Code  Gb  gpio.o [1]
+Region$$Table$$Base          0x1120          --   Gb  - Linker created -
+Region$$Table$$Limit         0x1130          --   Gb  - Linker created -
+SysCtlClockFreqSet            0x42b  0x1fc  Code  Gb  sysctl.o [3]
+SysCtlPeripheralEnable        0x40d    0x8  Code  Gb  sysctl.o [3]
+SysCtlPeripheralPresent
+                              0x3e1    0xa  Code  Gb  sysctl.o [3]
+SysCtlPeripheralReady         0x3eb    0x8  Code  Gb  sysctl.o [3]
+SystemCoreClock         0x2000'066c    0x4  Data  Gb  system_TM4C1294_TW.o [1]
+SystemInit                   0x1131   0x10  Code  Gb  system_TM4C1294_TW.o [1]
+TIMER0A_Handler               0xef9    0x4  Code  Gb  TimerInit.o [1]
+TimerConfigure                0xbef   0x54  Code  Gb  timer.o [3]
+TimerEnable                   0xbdf   0x10  Code  Gb  timer.o [3]
+TimerInit                     0xefd   0x60  Code  Gb  TimerInit.o [1]
+TimerIntEnable                0xc73    0xa  Code  Gb  timer.o [3]
+TimerIntRegister              0xc59   0x1a  Code  Gb  timer.o [3]
+UARTConfigSetExpClk           0xdc9   0x5c  Code  Gb  uart.o [3]
+UARTDisable                   0xe3f   0x22  Code  Gb  uart.o [3]
+UARTEnable                    0xe25   0x1a  Code  Gb  uart.o [3]
+UARTInit                      0xfdd   0x5c  Code  Gb  UARTInit.o [1]
+UARTStdioConfig              0x1039   0x48  Code  Gb  uartstdio.o [1]
+_SysCtlMemTimingGet           0x3c1   0x20  Code  Lc  sysctl.o [3]
+_TimerIntNumberGet            0xba1   0x3e  Code  Lc  timer.o [3]
+__Vectors                       0x0          --   Gb  startup_TM4C1294.o [1]
+__Vectors_End                 0x3c0         Data  Gb  startup_TM4C1294.o [1]
+__Vectors_Size {Abs}          0x3c0          --   Gb  startup_TM4C1294.o [1]
+__cmain                      0x1151         Code  Gb  cmain.o [5]
+__exit                       0x11a1   0x14  Code  Gb  exit.o [6]
+__iar_data_init3             0x10f9   0x28  Code  Gb  data_init.o [5]
+__iar_init_vfp               0x11bd         Code  Wk  startup_TM4C1294.o [1]
+__iar_program_start          0x11e1         Code  Gb  cstartup_M.o [5]
+__iar_zero_init3             0x108d   0x3a  Code  Gb  zero_init3.o [5]
+__low_level_init             0x116f    0x4  Code  Gb  low_level_init.o [2]
+__vector_table                  0x0         Data  Gb  startup_TM4C1294.o [1]
+__vector_table_0x1c            0x1c         Data  Gb  startup_TM4C1294.o [1]
+_call_main                   0x115d         Code  Gb  cmain.o [5]
+_exit                        0x1195         Code  Gb  cexit.o [5]
+_main                        0x116b         Code  Gb  cmain.o [5]
+exit                         0x1191    0x4  Code  Gb  exit.o [2]
+g_pfnRAMVectors         0x2000'0400  0x26c  Data  Lc  interrupt.o [3]
+g_pppui32XTALtoVCO            0x84c  0x1b0  Data  Lc  sysctl.o [3]
+g_ppui32TimerIntMap           0xd28   0x60  Data  Lc  timer.o [3]
+g_ppui32TimerIntMapSnowflake
+                              0xd88   0x40  Data  Lc  timer.o [3]
+g_pui32EnRegs                 0xd14   0x14  Data  Lc  interrupt.o [3]
+g_pui32GPIOBaseAddrs          0xe68   0x90  Data  Lc  gpio.o [3]
+g_pui32VCOFrequencies         0x664    0x8  Data  Lc  sysctl.o [3]
+g_pui32Xtals                  0xf70   0x6c  Data  Lc  sysctl.o [3]
+g_sXTALtoMEMTIM              0x10c8   0x30  Data  Lc  sysctl.o [3]
+g_ui32Base              0x2000'0000    0x4  Data  Lc  uartstdio.o [1]
+g_ui32UARTBase               0x11c8    0xc  Data  Lc  uartstdio.o [1]
+g_ui32UARTPeriph             0x11d4    0xc  Data  Lc  uartstdio.o [1]
+main                         0x1175   0x1c  Code  Gb  main.o [1]
+
+
+[1] = C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\Debug\Obj
+[2] = dl7M_tln.a
+[3] = driverlib.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+   3'656 bytes of readonly  code memory
+     932 bytes of readonly  data memory
+  33'396 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
