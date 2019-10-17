@@ -53,7 +53,7 @@
         <LMIFTDIfoundProbes />
     </LMIFTDIDriver>
     <DebugChecksum>
-        <Checksum>652468895</Checksum>
+        <Checksum>1735108919</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -65,10 +65,6 @@
     <Disassembly>
         <MixedMode>1</MixedMode>
     </Disassembly>
-    <TermIOLog>
-        <LoggingEnabled>_ 0</LoggingEnabled>
-        <LogFile>_ ""</LogFile>
-    </TermIOLog>
     <LogFile>
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>
@@ -84,12 +80,18 @@
         <mode>0</mode>
     </DisassembleMode>
     <Breakpoints>
-        <Bp0>_ "STD_CODE" "{$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\ewarm\Exe\TimerInit.c}.38.3" 0 0 0 0 "" 0 ""</Bp0>
-        <Bp1>_ "STD_CODE" "{$PROJ_DIR$\src\TimerInit.c}.14.7" 1 0 0 0 "" 0 ""</Bp1>
-        <Count>2</Count>
+        <Bp0>_ "STD_CODE" "{$PROJ_DIR$\src\TimerInit.c}.14.3" 1 0 0 0 "" 0 ""</Bp0>
+        <Count>1</Count>
     </Breakpoints>
     <Aliases>
-        <Count>0</Count>
+        <A0>_ "C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\TivaWare_C_Series-2.1.4.178\driverlib\interrupt.c" ""</A0>
+        <A1>_ "C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\TivaWare_C_Series-2.1.4.178\driverlib\timer.c" ""</A1>
+        <A2>_ "C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\TivaWare_C_Series-2.1.4.178\driverlib\uart.c" ""</A2>
+        <Count>3</Count>
         <SuppressDialog>0</SuppressDialog>
     </Aliases>
+    <TermIOLog>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+    </TermIOLog>
 </settings>

@@ -24,6 +24,7 @@
 
 #include "gpio.h"
 #include "UARTInit.h"
+#include "TimerInit.h"
 
 #define BIT0 (0x1)
 
@@ -158,7 +159,7 @@ void computaResultados() {
 
 void adquireAmostras() {
   while(i_vet < TAM_VET) {
-    vet[i_vet] = PortC_Input();
+    vet[i_vet] = GPIOPinRead(GPIO_PORTD_BASE, GPIO_PIN_0);
     PortA_Output(PortC_Input());
     i_vet++;
   }
@@ -185,17 +186,21 @@ void contaBaixosAltos() {
   }
 }
 
+bool entrada_D0 = 0;
+
 void main(void){
   GPIO_Init();
   UARTInit();
   TimerInit();
   PortM_Output(BIT6);
   
+  uint64_t valorTimer = 0;
+  
   while(1){
-    /*i_vet = 0;
+    /*i_vet = 0;*/
     
-    adquireAmostras();
-    
+    //adquireAmostras();
+    /*
     i_vet = 1;
     num_transicoes = 0;
     num_baixos_altos[0] = 0;
@@ -210,6 +215,8 @@ void main(void){
       UARTprintf("Erro: Nenhuma borda detectada\n");
       
     }*/
-    PortA_Output(0);
+    //valorTimer = TimerValueGet64(TIMER0_BASE);
+    //PortA_Output(valorTimer >> 60);
+    entrada_D0 = GPIOPinRead(GPIO_PORTD_BASE, GPIO_PIN_0);
   }
 } // main

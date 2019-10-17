@@ -16,4 +16,5 @@ main.pbi: C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\src\main.c \
   D:\Programas\IAR\arm\inc\c\stdarg.h \
   C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\src/system_TM4C1294.h \
   C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\src/gpio.h \
-  C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\src/UARTInit.h
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\src/UARTInit.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\src/TimerInit.h

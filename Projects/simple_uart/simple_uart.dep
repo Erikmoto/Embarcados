@@ -5,93 +5,63 @@
     <configuration>
         <name>Debug</name>
         <outputs>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_uart.h</file>
-            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_compiler.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
             <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
-            <file>$PROJ_DIR$\src\system_TM4C1294_TW.c</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\rom.h</file>
-            <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C1294NC.icf</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\rom_map.h</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\gpio.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\uartstdio.o</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\utils\uartstdio.c</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\ewarm\Exe\driverlib.a</file>
-            <file>$PROJ_DIR$\src\simple_uart.c</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
-            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_iccarm.h</file>
-            <file>$PROJ_DIR$\src\startup_TM4C1294.s</file>
-            <file>$PROJ_DIR$\Debug\Obj\system_TM4C1294_TW.o</file>
-            <file>$PROJ_DIR$\src\TM4C1294NCPDT.h</file>
-            <file>$PROJ_DIR$\src\system_TM4C1294.h</file>
-            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
-            <file>$PROJ_DIR$\Debug\Obj\simple_uart.o</file>
-            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_version.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
             <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\gpio.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
             <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\systick.h</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\debug.h</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_memmap.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\utils\uartstdio.h</file>
-            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_ints.h</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_types.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\pin_map.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\startup_TM4C1294.o</file>
-            <file>$PROJ_DIR$\Debug\Exe\simple_uart.out</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\uart.h</file>
-            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
-            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\core_cm4.h</file>
-            <file>$PROJ_DIR$\Debug\List\simple_uart.map</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\ewarm\Exe\driverlib.a</file>
+            <file>$PROJ_DIR$\src\system_TM4C1294_TW.c</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_iccarm.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\simple_uart.o</file>
             <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\sysctl.h</file>
             <file>$TOOLKIT_DIR$\inc\c\iccarm_builtin.h</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_uart.h</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_compiler.h</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\rom.h</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\rom_map.h</file>
+            <file>$PROJ_DIR$\src\startup_TM4C1294.s</file>
+            <file>$PROJ_DIR$\src\simple_uart.c</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\utils\uartstdio.c</file>
             <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\interrupt.h</file>
+            <file>$PROJ_DIR$\Debug\Exe\simple_uart.out</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup_TM4C1294.o</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\core_cm4.h</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\uart.h</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\debug.h</file>
+            <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
+            <file>$PROJ_DIR$\src\system_TM4C1294.h</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_version.h</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_types.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\system_TM4C1294_TW.o</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\utils\uartstdio.h</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_ints.h</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C1294NC.icf</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\pin_map.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
+            <file>$PROJ_DIR$\Debug\List\simple_uart.map</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_memmap.h</file>
+            <file>$PROJ_DIR$\src\TM4C1294NCPDT.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\uartstdio.o</file>
         </outputs>
         <file>
             <name>$PROJ_DIR$\src\system_TM4C1294_TW.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 17</file>
+                    <file> 31</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 14 27 2 9 3 33 18 39 22 1 15 42 19 32 41</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\utils\uartstdio.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 10</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 32 14 27 2 9 3 33 30 26 31 0 25 43 5 7 41 37 28</file>
-                </tool>
-            </inputs>
-        </file>
-        <file>
-            <name>$PROJ_DIR$\src\simple_uart.c</name>
-            <outputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 21</file>
-                </tool>
-            </outputs>
-            <inputs>
-                <tool>
-                    <name>ICCARM</name>
-                    <file> 14 27 2 9 3 33 32 26 8 37 41 24 34 28 19</file>
+                    <file> 4 42 1 37 0 41 40 22 28 13 8 11 27 30 10</file>
                 </tool>
             </inputs>
         </file>
@@ -100,22 +70,52 @@
             <outputs>
                 <tool>
                     <name>AARM</name>
-                    <file> 35</file>
+                    <file> 21</file>
                 </tool>
             </outputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\src\simple_uart.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 9</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 4 42 1 37 0 41 30 39 3 23 10 5 36 32 27</file>
+                </tool>
+            </inputs>
+        </file>
+        <file>
+            <name>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\utils\uartstdio.c</name>
+            <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 43</file>
+                </tool>
+            </outputs>
+            <inputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 30 4 42 1 37 0 41 33 39 29 12 25 19 14 15 10 23 32</file>
+                </tool>
+            </inputs>
         </file>
         <file>
             <name>$PROJ_DIR$\Debug\Exe\simple_uart.out</name>
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 40</file>
+                    <file> 38</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 6 12 21 35 17 10 29 38 23 20</file>
+                    <file> 35 6 9 21 31 43 26 34 2 24</file>
                 </tool>
             </inputs>
         </file>
@@ -124,7 +124,7 @@
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 40 36</file>
+                    <file> 38 20</file>
                 </tool>
             </outputs>
         </file>

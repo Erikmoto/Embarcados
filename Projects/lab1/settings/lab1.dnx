@@ -24,7 +24,7 @@
         <LMIFTDIfoundProbes />
     </LMIFTDIDriver>
     <DebugChecksum>
-        <Checksum>451118641</Checksum>
+        <Checksum>278125251</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -104,15 +104,17 @@
         <mode>0</mode>
     </DisassembleMode>
     <Breakpoints>
-        <Count>0</Count>
+        <Bp0>_ "STD_CODE" "{$PROJ_DIR$\src\main.c}.195.5" 1 0 0 0 "" 0 ""</Bp0>
+        <Count>1</Count>
     </Breakpoints>
     <Aliases>
         <A0>_ "C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\TivaWare_C_Series-2.1.4.178\driverlib\sysctl.c" "E:\Documents\GitHub\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\sysctl.c"</A0>
         <A1>_ "C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\TivaWare_C_Series-2.1.4.178\driverlib\systick.c" "E:\Documents\GitHub\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\systick.c"</A1>
         <A2>_ "C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\TivaWare_C_Series-2.1.4.178\driverlib\uart.c" ""</A2>
         <A3>_ "C:\Users\ryuic\Downloads\Embarcados\Projects\lab1\src\startup_TM4C1294.s" ""</A3>
-        <A4>_ "E:\Documents\GitHub\Embarcados\Projects\lab1\src\startup_TM4C1294.s" "C:\Users\ryuic\Downloads\Embarcados\Projects\lab1\src\startup_TM4C1294.s"</A4>
-        <Count>5</Count>
+        <A4>_ "E:\Documents\GitHub\Embarcados\Projects\lab1\src\main.c" "C:\Users\ryuic\Downloads\Embarcados\Projects\lab1\src\main.c"</A4>
+        <A5>_ "E:\Documents\GitHub\Embarcados\Projects\lab1\src\startup_TM4C1294.s" "C:\Users\ryuic\Downloads\Embarcados\Projects\lab1\src\startup_TM4C1294.s"</A5>
+        <Count>6</Count>
         <SuppressDialog>0</SuppressDialog>
     </Aliases>
 </settings>

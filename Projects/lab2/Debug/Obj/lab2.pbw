@@ -8123,7 +8123,7 @@
     "ID": "c:@F@SysCtlVCOGet",
     "What": "Function",
     "defdec": "Dec",
-    "display": "bool SysCtlVCOGet(uint32_t, uint32_t *)",
+    "display": "_Bool SysCtlVCOGet(uint32_t, uint32_t *)",
     "location": {
       "column": "13",
       "line": "645",
@@ -8137,7 +8137,7 @@
     "ID": "c:@F@SysCtlVCOGet",
     "What": "Function",
     "defdec": "Dec",
-    "display": "_Bool SysCtlVCOGet(uint32_t, uint32_t *)",
+    "display": "bool SysCtlVCOGet(uint32_t, uint32_t *)",
     "location": {
       "column": "13",
       "line": "645",
@@ -16974,13 +16974,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@669@macro@BIT0",
+    "ID": "c:main.c@693@macro@BIT0",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BIT0",
     "location": {
       "column": "9",
-      "line": "28",
+      "line": "29",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BIT0",
@@ -16988,13 +16988,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@691@macro@BIT1",
+    "ID": "c:main.c@715@macro@BIT1",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BIT1",
     "location": {
       "column": "9",
-      "line": "30",
+      "line": "31",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BIT1",
@@ -17002,13 +17002,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@711@macro@BITS_1_0",
+    "ID": "c:main.c@735@macro@BITS_1_0",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_1_0",
     "location": {
       "column": "9",
-      "line": "31",
+      "line": "32",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_1_0",
@@ -17016,13 +17016,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@756@macro@BIT2",
+    "ID": "c:main.c@780@macro@BIT2",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BIT2",
     "location": {
       "column": "9",
-      "line": "33",
+      "line": "34",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BIT2",
@@ -17030,13 +17030,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@776@macro@BITS_2_0",
+    "ID": "c:main.c@800@macro@BITS_2_0",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_2_0",
     "location": {
       "column": "9",
-      "line": "34",
+      "line": "35",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_2_0",
@@ -17044,13 +17044,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@819@macro@BITS_2_1",
+    "ID": "c:main.c@843@macro@BITS_2_1",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_2_1",
     "location": {
       "column": "9",
-      "line": "35",
+      "line": "36",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_2_1",
@@ -17058,13 +17058,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@862@macro@BITS_2_1_0",
+    "ID": "c:main.c@886@macro@BITS_2_1_0",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_2_1_0",
     "location": {
       "column": "9",
-      "line": "36",
+      "line": "37",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_2_1_0",
@@ -17072,13 +17072,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@913@macro@BIT3",
+    "ID": "c:main.c@937@macro@BIT3",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BIT3",
     "location": {
       "column": "9",
-      "line": "38",
+      "line": "39",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BIT3",
@@ -17086,13 +17086,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@933@macro@BITS_3_0",
+    "ID": "c:main.c@957@macro@BITS_3_0",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_3_0",
     "location": {
       "column": "9",
-      "line": "39",
+      "line": "40",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_3_0",
@@ -17100,13 +17100,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@976@macro@BITS_3_1",
+    "ID": "c:main.c@1000@macro@BITS_3_1",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_3_1",
     "location": {
       "column": "9",
-      "line": "40",
+      "line": "41",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_3_1",
@@ -17114,13 +17114,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1020@macro@BITS_3_1_0",
+    "ID": "c:main.c@1044@macro@BITS_3_1_0",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_3_1_0",
     "location": {
       "column": "9",
-      "line": "41",
+      "line": "42",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_3_1_0",
@@ -17128,13 +17128,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1070@macro@BITS_3_2",
+    "ID": "c:main.c@1094@macro@BITS_3_2",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_3_2",
     "location": {
       "column": "9",
-      "line": "42",
+      "line": "43",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_3_2",
@@ -17142,13 +17142,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1114@macro@BITS_3_2_0",
+    "ID": "c:main.c@1138@macro@BITS_3_2_0",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_3_2_0",
     "location": {
       "column": "9",
-      "line": "43",
+      "line": "44",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_3_2_0",
@@ -17156,13 +17156,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1164@macro@BITS_3_2_1",
+    "ID": "c:main.c@1188@macro@BITS_3_2_1",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_3_2_1",
     "location": {
       "column": "9",
-      "line": "44",
+      "line": "45",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_3_2_1",
@@ -17170,13 +17170,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1214@macro@BITS_3_2_1_0",
+    "ID": "c:main.c@1238@macro@BITS_3_2_1_0",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_3_2_1_0",
     "location": {
       "column": "9",
-      "line": "45",
+      "line": "46",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_3_2_1_0",
@@ -17184,13 +17184,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1272@macro@BIT4",
+    "ID": "c:main.c@1296@macro@BIT4",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BIT4",
     "location": {
       "column": "9",
-      "line": "47",
+      "line": "48",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BIT4",
@@ -17198,13 +17198,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1295@macro@BIT5",
+    "ID": "c:main.c@1319@macro@BIT5",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BIT5",
     "location": {
       "column": "9",
-      "line": "49",
+      "line": "50",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BIT5",
@@ -17212,13 +17212,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1316@macro@BITS_5_4",
+    "ID": "c:main.c@1340@macro@BITS_5_4",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_5_4",
     "location": {
       "column": "9",
-      "line": "50",
+      "line": "51",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_5_4",
@@ -17226,13 +17226,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1369@macro@BIT6",
+    "ID": "c:main.c@1393@macro@BIT6",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BIT6",
     "location": {
       "column": "9",
-      "line": "52",
+      "line": "53",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BIT6",
@@ -17240,13 +17240,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1390@macro@BITS_6_4",
+    "ID": "c:main.c@1414@macro@BITS_6_4",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_6_4",
     "location": {
       "column": "9",
-      "line": "53",
+      "line": "54",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_6_4",
@@ -17254,13 +17254,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1441@macro@BITS_6_5",
+    "ID": "c:main.c@1465@macro@BITS_6_5",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_6_5",
     "location": {
       "column": "9",
-      "line": "54",
+      "line": "55",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_6_5",
@@ -17268,13 +17268,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1492@macro@BITS_6_5_4",
+    "ID": "c:main.c@1516@macro@BITS_6_5_4",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_6_5_4",
     "location": {
       "column": "9",
-      "line": "55",
+      "line": "56",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_6_5_4",
@@ -17282,13 +17282,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1553@macro@BIT7",
+    "ID": "c:main.c@1577@macro@BIT7",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BIT7",
     "location": {
       "column": "9",
-      "line": "57",
+      "line": "58",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BIT7",
@@ -17296,13 +17296,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1574@macro@BITS_7_4",
+    "ID": "c:main.c@1598@macro@BITS_7_4",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_7_4",
     "location": {
       "column": "9",
-      "line": "58",
+      "line": "59",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_7_4",
@@ -17310,13 +17310,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1625@macro@BITS_7_5",
+    "ID": "c:main.c@1649@macro@BITS_7_5",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_7_5",
     "location": {
       "column": "9",
-      "line": "59",
+      "line": "60",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_7_5",
@@ -17324,13 +17324,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1677@macro@BITS_7_5_4",
+    "ID": "c:main.c@1701@macro@BITS_7_5_4",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_7_5_4",
     "location": {
       "column": "9",
-      "line": "60",
+      "line": "61",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_7_5_4",
@@ -17338,13 +17338,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1737@macro@BITS_7_6",
+    "ID": "c:main.c@1761@macro@BITS_7_6",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_7_6",
     "location": {
       "column": "9",
-      "line": "61",
+      "line": "62",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_7_6",
@@ -17352,13 +17352,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1789@macro@BITS_7_6_4",
+    "ID": "c:main.c@1813@macro@BITS_7_6_4",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_7_6_4",
     "location": {
       "column": "9",
-      "line": "62",
+      "line": "63",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_7_6_4",
@@ -17366,13 +17366,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1849@macro@BITS_7_6_5",
+    "ID": "c:main.c@1873@macro@BITS_7_6_5",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_7_6_5",
     "location": {
       "column": "9",
-      "line": "63",
+      "line": "64",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_7_6_5",
@@ -17380,13 +17380,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@1909@macro@BITS_7_6_5_4",
+    "ID": "c:main.c@1933@macro@BITS_7_6_5_4",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "BITS_7_6_5_4",
     "location": {
       "column": "9",
-      "line": "64",
+      "line": "65",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "BITS_7_6_5_4",
@@ -17394,13 +17394,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@2010@macro@ModoInstrucao",
+    "ID": "c:main.c@2034@macro@ModoInstrucao",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "ModoInstrucao",
     "location": {
       "column": "9",
-      "line": "67",
+      "line": "68",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "ModoInstrucao",
@@ -17408,13 +17408,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@2086@macro@ModoEscritaDados",
+    "ID": "c:main.c@2110@macro@ModoEscritaDados",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "ModoEscritaDados",
     "location": {
       "column": "9",
-      "line": "68",
+      "line": "69",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "ModoEscritaDados",
@@ -17422,13 +17422,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@2165@macro@ModoLeituraBusyEndereco",
+    "ID": "c:main.c@2189@macro@ModoLeituraBusyEndereco",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "ModoLeituraBusyEndereco",
     "location": {
       "column": "9",
-      "line": "69",
+      "line": "70",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "ModoLeituraBusyEndereco",
@@ -17436,13 +17436,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@2292@macro@ModoLeituraRAM",
+    "ID": "c:main.c@2316@macro@ModoLeituraRAM",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "ModoLeituraRAM",
     "location": {
       "column": "9",
-      "line": "70",
+      "line": "71",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "ModoLeituraRAM",
@@ -17450,13 +17450,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@2596@macro@LimpaLCD",
+    "ID": "c:main.c@2620@macro@LimpaLCD",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "LimpaLCD",
     "location": {
       "column": "9",
-      "line": "75",
+      "line": "76",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "LimpaLCD",
@@ -17464,13 +17464,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@2738@macro@ReiniciaCursor",
+    "ID": "c:main.c@2762@macro@ReiniciaCursor",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "ReiniciaCursor",
     "location": {
       "column": "9",
-      "line": "78",
+      "line": "79",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "ReiniciaCursor",
@@ -17478,13 +17478,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@2895@macro@ConfiguraCursorEsquerda",
+    "ID": "c:main.c@2919@macro@ConfiguraCursorEsquerda",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "ConfiguraCursorEsquerda",
     "location": {
       "column": "9",
-      "line": "81",
+      "line": "82",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "ConfiguraCursorEsquerda",
@@ -17492,13 +17492,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@3003@macro@ConfiguraCursorDireita",
+    "ID": "c:main.c@3027@macro@ConfiguraCursorDireita",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "ConfiguraCursorDireita",
     "location": {
       "column": "9",
-      "line": "82",
+      "line": "83",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "ConfiguraCursorDireita",
@@ -17506,13 +17506,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@3113@macro@ConfiguraDisplayDireita",
+    "ID": "c:main.c@3137@macro@ConfiguraDisplayDireita",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "ConfiguraDisplayDireita",
     "location": {
       "column": "9",
-      "line": "83",
+      "line": "84",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "ConfiguraDisplayDireita",
@@ -17520,13 +17520,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@3222@macro@ConfiguraDisplayEsquerda",
+    "ID": "c:main.c@3246@macro@ConfiguraDisplayEsquerda",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "ConfiguraDisplayEsquerda",
     "location": {
       "column": "9",
-      "line": "84",
+      "line": "85",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "ConfiguraDisplayEsquerda",
@@ -17534,13 +17534,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@3429@macro@DisplayD_CursorD_PiscanteD",
+    "ID": "c:main.c@3453@macro@DisplayD_CursorD_PiscanteD",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "DisplayD_CursorD_PiscanteD",
     "location": {
       "column": "9",
-      "line": "87",
+      "line": "88",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "DisplayD_CursorD_PiscanteD",
@@ -17548,13 +17548,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@3532@macro@DisplayD_CursorD_PiscanteA",
+    "ID": "c:main.c@3556@macro@DisplayD_CursorD_PiscanteA",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "DisplayD_CursorD_PiscanteA",
     "location": {
       "column": "9",
-      "line": "88",
+      "line": "89",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "DisplayD_CursorD_PiscanteA",
@@ -17562,13 +17562,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@3636@macro@DisplayD_CursorA_PiscanteD",
+    "ID": "c:main.c@3660@macro@DisplayD_CursorA_PiscanteD",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "DisplayD_CursorA_PiscanteD",
     "location": {
       "column": "9",
-      "line": "89",
+      "line": "90",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "DisplayD_CursorA_PiscanteD",
@@ -17576,13 +17576,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@3740@macro@DisplayD_CursorA_PiscanteA",
+    "ID": "c:main.c@3764@macro@DisplayD_CursorA_PiscanteA",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "DisplayD_CursorA_PiscanteA",
     "location": {
       "column": "9",
-      "line": "90",
+      "line": "91",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "DisplayD_CursorA_PiscanteA",
@@ -17590,13 +17590,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@3843@macro@DisplayA_CursorD_PiscanteD",
+    "ID": "c:main.c@3867@macro@DisplayA_CursorD_PiscanteD",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "DisplayA_CursorD_PiscanteD",
     "location": {
       "column": "9",
-      "line": "91",
+      "line": "92",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "DisplayA_CursorD_PiscanteD",
@@ -17604,13 +17604,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@3947@macro@DisplayA_CursorD_PiscanteA",
+    "ID": "c:main.c@3971@macro@DisplayA_CursorD_PiscanteA",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "DisplayA_CursorD_PiscanteA",
     "location": {
       "column": "9",
-      "line": "92",
+      "line": "93",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "DisplayA_CursorD_PiscanteA",
@@ -17618,13 +17618,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@4050@macro@DisplayA_CursorA_PiscanteD",
+    "ID": "c:main.c@4074@macro@DisplayA_CursorA_PiscanteD",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "DisplayA_CursorA_PiscanteD",
     "location": {
       "column": "9",
-      "line": "93",
+      "line": "94",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "DisplayA_CursorA_PiscanteD",
@@ -17632,13 +17632,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@4153@macro@DisplayA_CursorA_PiscanteA",
+    "ID": "c:main.c@4177@macro@DisplayA_CursorA_PiscanteA",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "DisplayA_CursorA_PiscanteA",
     "location": {
       "column": "9",
-      "line": "94",
+      "line": "95",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "DisplayA_CursorA_PiscanteA",
@@ -17646,13 +17646,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@4349@macro@DeslocaCursorEsquerda",
+    "ID": "c:main.c@4373@macro@DeslocaCursorEsquerda",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "DeslocaCursorEsquerda",
     "location": {
       "column": "9",
-      "line": "97",
+      "line": "98",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "DeslocaCursorEsquerda",
@@ -17660,13 +17660,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@4438@macro@DeslocaCursorDireita",
+    "ID": "c:main.c@4462@macro@DeslocaCursorDireita",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "DeslocaCursorDireita",
     "location": {
       "column": "9",
-      "line": "98",
+      "line": "99",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "DeslocaCursorDireita",
@@ -17674,13 +17674,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@4532@macro@DeslocaDisplayEsquerda",
+    "ID": "c:main.c@4556@macro@DeslocaDisplayEsquerda",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "DeslocaDisplayEsquerda",
     "location": {
       "column": "9",
-      "line": "99",
+      "line": "100",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "DeslocaDisplayEsquerda",
@@ -17688,13 +17688,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@4630@macro@DeslocaDisplayDireita",
+    "ID": "c:main.c@4654@macro@DeslocaDisplayDireita",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "DeslocaDisplayDireita",
     "location": {
       "column": "9",
-      "line": "100",
+      "line": "101",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "DeslocaDisplayDireita",
@@ -17702,13 +17702,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@4824@macro@Modo_4Bits_1Linha_5x8Pontos",
+    "ID": "c:main.c@4848@macro@Modo_4Bits_1Linha_5x8Pontos",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "Modo_4Bits_1Linha_5x8Pontos",
     "location": {
       "column": "9",
-      "line": "103",
+      "line": "104",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "Modo_4Bits_1Linha_5x8Pontos",
@@ -17716,13 +17716,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@4939@macro@Modo_4Bits_1Linha_5x11Pontos",
+    "ID": "c:main.c@4963@macro@Modo_4Bits_1Linha_5x11Pontos",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "Modo_4Bits_1Linha_5x11Pontos",
     "location": {
       "column": "9",
-      "line": "104",
+      "line": "105",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "Modo_4Bits_1Linha_5x11Pontos",
@@ -17730,13 +17730,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@5063@macro@Modo_4Bits_2Linhas_5x8Pontos",
+    "ID": "c:main.c@5087@macro@Modo_4Bits_2Linhas_5x8Pontos",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "Modo_4Bits_2Linhas_5x8Pontos",
     "location": {
       "column": "9",
-      "line": "105",
+      "line": "106",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "Modo_4Bits_2Linhas_5x8Pontos",
@@ -17744,13 +17744,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@5187@macro@Modo_4Bits_2Linhas_5x11Pontos",
+    "ID": "c:main.c@5211@macro@Modo_4Bits_2Linhas_5x11Pontos",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "Modo_4Bits_2Linhas_5x11Pontos",
     "location": {
       "column": "9",
-      "line": "106",
+      "line": "107",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "Modo_4Bits_2Linhas_5x11Pontos",
@@ -17758,13 +17758,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@5317@macro@Modo_8Bits_1Linha_5x8Pontos",
+    "ID": "c:main.c@5341@macro@Modo_8Bits_1Linha_5x8Pontos",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "Modo_8Bits_1Linha_5x8Pontos",
     "location": {
       "column": "9",
-      "line": "107",
+      "line": "108",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "Modo_8Bits_1Linha_5x8Pontos",
@@ -17772,13 +17772,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@5436@macro@Modo_8Bits_1Linha_5x11Pontos",
+    "ID": "c:main.c@5460@macro@Modo_8Bits_1Linha_5x11Pontos",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "Modo_8Bits_1Linha_5x11Pontos",
     "location": {
       "column": "9",
-      "line": "108",
+      "line": "109",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "Modo_8Bits_1Linha_5x11Pontos",
@@ -17786,13 +17786,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@5564@macro@Modo_8Bits_2Linhas_5x8Pontos",
+    "ID": "c:main.c@5588@macro@Modo_8Bits_2Linhas_5x8Pontos",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "Modo_8Bits_2Linhas_5x8Pontos",
     "location": {
       "column": "9",
-      "line": "109",
+      "line": "110",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "Modo_8Bits_2Linhas_5x8Pontos",
@@ -17800,13 +17800,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@5692@macro@Modo_8Bits_2Linhas_5x11Pontos",
+    "ID": "c:main.c@5716@macro@Modo_8Bits_2Linhas_5x11Pontos",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "Modo_8Bits_2Linhas_5x11Pontos",
     "location": {
       "column": "9",
-      "line": "110",
+      "line": "111",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "Modo_8Bits_2Linhas_5x11Pontos",
@@ -17814,13 +17814,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@5902@macro@CarregaEnderecoCaractere",
+    "ID": "c:main.c@5926@macro@CarregaEnderecoCaractere",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "CarregaEnderecoCaractere",
     "location": {
       "column": "9",
-      "line": "113",
+      "line": "114",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "CarregaEnderecoCaractere",
@@ -17828,13 +17828,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@6123@macro@MoveCursorLinha1",
+    "ID": "c:main.c@6147@macro@MoveCursorLinha1",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "MoveCursorLinha1",
     "location": {
       "column": "9",
-      "line": "116",
+      "line": "117",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "MoveCursorLinha1",
@@ -17842,13 +17842,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@6261@macro@MoveCursorLinha2",
+    "ID": "c:main.c@6285@macro@MoveCursorLinha2",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "MoveCursorLinha2",
     "location": {
       "column": "9",
-      "line": "117",
+      "line": "118",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "MoveCursorLinha2",
@@ -17856,13 +17856,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@6454@macro@TempoMensagem",
+    "ID": "c:main.c@6478@macro@TempoMensagem",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "TempoMensagem",
     "location": {
       "column": "9",
-      "line": "121",
+      "line": "122",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "TempoMensagem",
@@ -17870,13 +17870,13 @@
     "scope": null
   },
   {
-    "ID": "c:main.c@6602@macro@TAM_VET",
+    "ID": "c:main.c@6626@macro@TAM_VET",
     "What": "MacroDef",
     "defdec": "Def",
     "display": "TAM_VET",
     "location": {
       "column": "9",
-      "line": "125",
+      "line": "126",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "TAM_VET",
@@ -17890,7 +17890,7 @@
     "display": "i_vet",
     "location": {
       "column": "10",
-      "line": "127",
+      "line": "128",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "i_vet",
@@ -17904,7 +17904,7 @@
     "display": "vet",
     "location": {
       "column": "6",
-      "line": "128",
+      "line": "129",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "vet",
@@ -17918,7 +17918,7 @@
     "display": "num_transicoes",
     "location": {
       "column": "9",
-      "line": "129",
+      "line": "130",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "num_transicoes",
@@ -17932,7 +17932,7 @@
     "display": "num_baixos_altos",
     "location": {
       "column": "10",
-      "line": "130",
+      "line": "131",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "num_baixos_altos",
@@ -17946,7 +17946,7 @@
     "display": "k",
     "location": {
       "column": "8",
-      "line": "131",
+      "line": "132",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "k",
@@ -17960,7 +17960,7 @@
     "display": "n_altos",
     "location": {
       "column": "10",
-      "line": "132",
+      "line": "133",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "n_altos",
@@ -17974,7 +17974,7 @@
     "display": "n_baixos",
     "location": {
       "column": "10",
-      "line": "133",
+      "line": "134",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "n_baixos",
@@ -17988,7 +17988,7 @@
     "display": "periodo",
     "location": {
       "column": "8",
-      "line": "134",
+      "line": "135",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "periodo",
@@ -18002,7 +18002,7 @@
     "display": "frequencia",
     "location": {
       "column": "8",
-      "line": "135",
+      "line": "136",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "frequencia",
@@ -18016,7 +18016,7 @@
     "display": "duty_cycle",
     "location": {
       "column": "8",
-      "line": "136",
+      "line": "137",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "duty_cycle",
@@ -18030,7 +18030,7 @@
     "display": "freq_decimal",
     "location": {
       "column": "9",
-      "line": "138",
+      "line": "139",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "freq_decimal",
@@ -18044,7 +18044,7 @@
     "display": "duty_cycle_decimal",
     "location": {
       "column": "9",
-      "line": "139",
+      "line": "140",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "duty_cycle_decimal",
@@ -18058,7 +18058,7 @@
     "display": "void computaResultados(void)",
     "location": {
       "column": "6",
-      "line": "141",
+      "line": "142",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "computaResultados",
@@ -18072,7 +18072,7 @@
     "display": "void adquireAmostras(void)",
     "location": {
       "column": "6",
-      "line": "159",
+      "line": "160",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "adquireAmostras",
@@ -18086,10 +18086,24 @@
     "display": "void contaBaixosAltos(void)",
     "location": {
       "column": "6",
-      "line": "167",
+      "line": "168",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "contaBaixosAltos",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@entrada_D0",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "entrada_D0",
+    "location": {
+      "column": "6",
+      "line": "189",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
+    },
+    "name": "entrada_D0",
     "origin": "project_file",
     "scope": null
   },
@@ -18100,11 +18114,207 @@
     "display": "void main(void)",
     "location": {
       "column": "6",
-      "line": "188",
+      "line": "191",
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
     },
     "name": "main",
     "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:main.c@8872@F@main@valorTimer",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "valorTimer",
+    "location": {
+      "column": "12",
+      "line": "197",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\main.c"
+    },
+    "name": "valorTimer",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:uartstdio.h@1194@macro@__UARTSTDIO_H__",
+    "What": "MacroDef",
+    "defdec": "Def",
+    "display": "__UARTSTDIO_H__",
+    "location": {
+      "column": "9",
+      "line": "26",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
+    },
+    "name": "__UARTSTDIO_H__",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UARTStdioConfig",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void UARTStdioConfig(uint32_t, uint32_t, uint32_t)",
+    "location": {
+      "column": "13",
+      "line": "61",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
+    },
+    "name": "UARTStdioConfig",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UARTStdioConfig",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void UARTStdioConfig(uint32_t, uint32_t, uint32_t)",
+    "location": {
+      "column": "13",
+      "line": "61",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
+    },
+    "name": "UARTStdioConfig",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UARTgets",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "int UARTgets(char *, uint32_t)",
+    "location": {
+      "column": "12",
+      "line": "63",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
+    },
+    "name": "UARTgets",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UARTgets",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "int UARTgets(char *, uint32_t)",
+    "location": {
+      "column": "12",
+      "line": "63",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
+    },
+    "name": "UARTgets",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UARTgetc",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "unsigned char UARTgetc(void)",
+    "location": {
+      "column": "22",
+      "line": "64",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
+    },
+    "name": "UARTgetc",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UARTgetc",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "unsigned char UARTgetc(void)",
+    "location": {
+      "column": "22",
+      "line": "64",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
+    },
+    "name": "UARTgetc",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UARTprintf",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void UARTprintf(const char *, ...)",
+    "location": {
+      "column": "13",
+      "line": "65",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
+    },
+    "name": "UARTprintf",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UARTprintf",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void UARTprintf(const char *, ...)",
+    "location": {
+      "column": "13",
+      "line": "65",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
+    },
+    "name": "UARTprintf",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UARTvprintf",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void UARTvprintf(const char *, va_list)",
+    "location": {
+      "column": "13",
+      "line": "66",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
+    },
+    "name": "UARTvprintf",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UARTvprintf",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void UARTvprintf(const char *, va_list)",
+    "location": {
+      "column": "13",
+      "line": "66",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
+    },
+    "name": "UARTvprintf",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UARTwrite",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "int UARTwrite(const char *, uint32_t)",
+    "location": {
+      "column": "12",
+      "line": "67",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
+    },
+    "name": "UARTwrite",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@UARTwrite",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "int UARTwrite(const char *, uint32_t)",
+    "location": {
+      "column": "12",
+      "line": "67",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
+    },
+    "name": "UARTwrite",
+    "origin": "user_include",
     "scope": null
   },
   {
@@ -21804,188 +22014,6 @@
     "scope": null
   },
   {
-    "ID": "c:uartstdio.h@1194@macro@__UARTSTDIO_H__",
-    "What": "MacroDef",
-    "defdec": "Def",
-    "display": "__UARTSTDIO_H__",
-    "location": {
-      "column": "9",
-      "line": "26",
-      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
-    },
-    "name": "__UARTSTDIO_H__",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@UARTStdioConfig",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void UARTStdioConfig(uint32_t, uint32_t, uint32_t)",
-    "location": {
-      "column": "13",
-      "line": "61",
-      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
-    },
-    "name": "UARTStdioConfig",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@UARTStdioConfig",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void UARTStdioConfig(uint32_t, uint32_t, uint32_t)",
-    "location": {
-      "column": "13",
-      "line": "61",
-      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
-    },
-    "name": "UARTStdioConfig",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@UARTgets",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "int UARTgets(char *, uint32_t)",
-    "location": {
-      "column": "12",
-      "line": "63",
-      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
-    },
-    "name": "UARTgets",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@UARTgets",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "int UARTgets(char *, uint32_t)",
-    "location": {
-      "column": "12",
-      "line": "63",
-      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
-    },
-    "name": "UARTgets",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@UARTgetc",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "unsigned char UARTgetc(void)",
-    "location": {
-      "column": "22",
-      "line": "64",
-      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
-    },
-    "name": "UARTgetc",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@UARTgetc",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "unsigned char UARTgetc(void)",
-    "location": {
-      "column": "22",
-      "line": "64",
-      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
-    },
-    "name": "UARTgetc",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@UARTprintf",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void UARTprintf(const char *, ...)",
-    "location": {
-      "column": "13",
-      "line": "65",
-      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
-    },
-    "name": "UARTprintf",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@UARTprintf",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void UARTprintf(const char *, ...)",
-    "location": {
-      "column": "13",
-      "line": "65",
-      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
-    },
-    "name": "UARTprintf",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@UARTvprintf",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void UARTvprintf(const char *, va_list)",
-    "location": {
-      "column": "13",
-      "line": "66",
-      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
-    },
-    "name": "UARTvprintf",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@UARTvprintf",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "void UARTvprintf(const char *, va_list)",
-    "location": {
-      "column": "13",
-      "line": "66",
-      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
-    },
-    "name": "UARTvprintf",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@UARTwrite",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "int UARTwrite(const char *, uint32_t)",
-    "location": {
-      "column": "12",
-      "line": "67",
-      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
-    },
-    "name": "UARTwrite",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@UARTwrite",
-    "What": "Function",
-    "defdec": "Dec",
-    "display": "int UARTwrite(const char *, uint32_t)",
-    "location": {
-      "column": "12",
-      "line": "67",
-      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\TivaWare_C_Series-2.1.4.178\\utils\\uartstdio.h"
-    },
-    "name": "UARTwrite",
-    "origin": "user_include",
-    "scope": null
-  },
-  {
     "ID": "c:systick.h@2031@macro@__DRIVERLIB_SYSTICK_H__",
     "What": "MacroDef",
     "defdec": "Def",
@@ -22207,6 +22235,34 @@
     },
     "name": "va_copy",
     "origin": "system_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TIMER0A_Handler",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TIMER0A_Handler(void)",
+    "location": {
+      "column": "6",
+      "line": "1",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\TimerInit.h"
+    },
+    "name": "TIMER0A_Handler",
+    "origin": "user_include",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TimerInit",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "void TimerInit(void)",
+    "location": {
+      "column": "6",
+      "line": "3",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\TimerInit.h"
+    },
+    "name": "TimerInit",
+    "origin": "user_include",
     "scope": null
   },
   {
@@ -61342,6 +61398,34 @@
     "scope": null
   },
   {
+    "ID": "c:@F@TIMER0A_Handler",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void TIMER0A_Handler(void)",
+    "location": {
+      "column": "6",
+      "line": "13",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\TimerInit.c"
+    },
+    "name": "TIMER0A_Handler",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@TimerInit",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void TimerInit(void)",
+    "location": {
+      "column": "6",
+      "line": "18",
+      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\TimerInit.c"
+    },
+    "name": "TimerInit",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
     "ID": "c:system_TM4C1294_TW.c@757@macro@__CONFIG_CLOCK",
     "What": "MacroDef",
     "defdec": "Def",
@@ -61408,48 +61492,6 @@
       "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\system_TM4C1294_TW.c"
     },
     "name": "SystemInit",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@TIMER0A_Handler",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void TIMER0A_Handler(void)",
-    "location": {
-      "column": "6",
-      "line": "13",
-      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\TimerInit.c"
-    },
-    "name": "TIMER0A_Handler",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:TimerInit.c@325@F@TIMER0A_Handler@x",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "x",
-    "location": {
-      "column": "7",
-      "line": "14",
-      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\TimerInit.c"
-    },
-    "name": "x",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@TimerInit",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void TimerInit(void)",
-    "location": {
-      "column": "6",
-      "line": "17",
-      "path": "C:\\Users\\ryuic\\Downloads\\Embarcados\\Projects\\lab2\\src\\TimerInit.c"
-    },
-    "name": "TimerInit",
     "origin": "project_file",
     "scope": null
   },
