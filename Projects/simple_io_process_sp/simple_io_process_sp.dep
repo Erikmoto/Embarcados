@@ -5,66 +5,75 @@
     <configuration>
         <name>Debug</name>
         <outputs>
+            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
+            <file>$PROJ_DIR$\src\TM4C1294NCPDT.h</file>
             <file>$PROJ_DIR$\src\system_TM4C1294_TW.c</file>
-            <file>$PROJ_DIR$\Debug\Exe\simple_io_process_sp.out</file>
+            <file>$TOOLKIT_DIR$\inc\c\iccarm_builtin.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\system_TM4C1294_TW.o</file>
+            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\ewarm\Exe\driverlib.a</file>
+            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
+            <file>$PROJ_DIR$\Debug\List\simple_io_process_sp.map</file>
+            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
+            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
+            <file>$PROJ_DIR$\src\simple_io_process_sp.c</file>
+            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
+            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_iccarm.h</file>
+            <file>$PROJ_DIR$\Debug\Obj\startup_TM4C1294.o</file>
+            <file>$PROJ_DIR$\Debug\Obj\simple_io_process_sp.o</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\gpio.h</file>
+            <file>$PROJ_DIR$\src\startup_TM4C1294.s</file>
             <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_memmap.h</file>
             <file>$TOOLKIT_DIR$\inc\c\stdbool.h</file>
             <file>$TOOLKIT_DIR$\lib\shb_l.a</file>
             <file>$TOOLKIT_DIR$\inc\c\DLib_Defaults.h</file>
-            <file>$TOOLKIT_DIR$\lib\m7M_tls.a</file>
-            <file>$PROJ_DIR$\Debug\List\simple_io_process_sp.map</file>
-            <file>$PROJ_DIR$\src\TM4C1294NCPDT.h</file>
             <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_version.h</file>
-            <file>$PROJ_DIR$\Debug\Obj\simple_io_process_sp.o</file>
-            <file>$TOOLKIT_DIR$\lib\dl7M_tln.a</file>
-            <file>$TOOLKIT_DIR$\inc\c\iccarm_builtin.h</file>
-            <file>$PROJ_DIR$\src\startup_TM4C1294.s</file>
-            <file>$PROJ_DIR$\Debug\Obj\system_TM4C1294_TW.o</file>
-            <file>$PROJ_DIR$\Debug\Obj\startup_TM4C1294.o</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\ewarm\Exe\driverlib.a</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\gpio.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
             <file>$TOOLKIT_DIR$\inc\c\DLib_Config_Normal.h</file>
-            <file>$PROJ_DIR$\src\simple_io_process_sp.c</file>
-            <file>$TOOLKIT_DIR$\inc\c\ycheck.h</file>
-            <file>$TOOLKIT_DIR$\inc\c\DLib_Product.h</file>
-            <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_iccarm.h</file>
-            <file>$TOOLKIT_DIR$\lib\rt7M_tl.a</file>
-            <file>$TOOLKIT_DIR$\inc\c\yvals.h</file>
-            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\sysctl.h</file>
+            <file>$PROJ_DIR$\Debug\Exe\simple_io_process_sp.out</file>
             <file>$TOOLKIT_DIR$\CMSIS\Core\Include\cmsis_compiler.h</file>
             <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\systick.h</file>
-            <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C1294NC.icf</file>
             <file>$TOOLKIT_DIR$\CMSIS\Core\Include\core_cm4.h</file>
+            <file>$PROJ_DIR$\..\..\TivaWare_C_Series-2.1.4.178\driverlib\sysctl.h</file>
+            <file>$TOOLKIT_DIR$\inc\c\stdint.h</file>
             <file>$PROJ_DIR$\src\system_TM4C1294.h</file>
+            <file>$TOOLKIT_DIR$\config\linker\TexasInstruments\TM4C1294NC.icf</file>
         </outputs>
+        <file>
+            <name>[ROOT_NODE]</name>
+            <outputs>
+                <tool>
+                    <name>ILINK</name>
+                    <file> 8 24</file>
+                </tool>
+            </outputs>
+        </file>
         <file>
             <name>$PROJ_DIR$\src\system_TM4C1294_TW.c</name>
             <outputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 14</file>
+                    <file> 4</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
                     <name>ICCARM</name>
-                    <file> 18 21 25 5 19 22 8 30 9 27 23 12 31 3 26</file>
+                    <file> 29 5 9 21 23 0 1 27 22 25 13 3 30 19 28</file>
                 </tool>
             </inputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\Debug\Exe\simple_io_process_sp.out</name>
+            <name>$PROJ_DIR$\src\simple_io_process_sp.c</name>
             <outputs>
                 <tool>
-                    <name>ILINK</name>
-                    <file> 7</file>
+                    <name>ICCARM</name>
+                    <file> 15</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
-                    <name>ILINK</name>
-                    <file> 29 16 10 15 14 4 24 6 11</file>
+                    <name>ICCARM</name>
+                    <file> 29 5 9 21 23 0 19 18 16 28 26</file>
                 </tool>
             </inputs>
         </file>
@@ -73,33 +82,24 @@
             <outputs>
                 <tool>
                     <name>AARM</name>
-                    <file> 15</file>
+                    <file> 14</file>
                 </tool>
             </outputs>
         </file>
         <file>
-            <name>$PROJ_DIR$\src\simple_io_process_sp.c</name>
+            <name>$PROJ_DIR$\Debug\Exe\simple_io_process_sp.out</name>
             <outputs>
                 <tool>
-                    <name>ICCARM</name>
-                    <file> 10</file>
+                    <name>ILINK</name>
+                    <file> 8</file>
                 </tool>
             </outputs>
             <inputs>
                 <tool>
-                    <name>ICCARM</name>
-                    <file> 18 21 25 5 19 22 3 2 17 26 28</file>
+                    <name>ILINK</name>
+                    <file> 31 6 15 14 4 20 7 12 10</file>
                 </tool>
             </inputs>
-        </file>
-        <file>
-            <name>[ROOT_NODE]</name>
-            <outputs>
-                <tool>
-                    <name>ILINK</name>
-                    <file> 7 1</file>
-                </tool>
-            </outputs>
         </file>
     </configuration>
     <configuration>

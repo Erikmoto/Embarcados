@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "C:\Users\Jordão\Documents\GitHub\Embarcados\Projects\lab2\settings\lab2.Debug.general.xcl" --backend -f "C:\Users\Jordão\Documents\GitHub\Embarcados\Projects\lab2\settings\lab2.Debug.driver.xcl" 
+& "D:\Programas\IAR\common\bin\cspybat" -f "C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\settings\lab2.Debug.general.xcl" --backend -f "C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\settings\lab2.Debug.driver.xcl" 
 }
 else
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "C:\Users\Jordão\Documents\GitHub\Embarcados\Projects\lab2\settings\lab2.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\Jordão\Documents\GitHub\Embarcados\Projects\lab2\settings\lab2.Debug.driver.xcl" 
+& "D:\Programas\IAR\common\bin\cspybat" -f "C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\settings\lab2.Debug.general.xcl" --debug_file=$debugfile --backend -f "C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\settings\lab2.Debug.driver.xcl" 
 }

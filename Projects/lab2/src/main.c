@@ -2,7 +2,6 @@
 
 // Autores:
 
-// Caio Alessandro Resnauer
 // Erik Ryuichi Yamamoto
 // Victor Jordão
 
@@ -24,7 +23,7 @@
 
 #include "gpio.h"
 #include "UARTInit.h"
-#include "TimerInit.h"
+#include "temporizador.h"
 
 #define BIT0 (0x1)
 
@@ -64,63 +63,6 @@
 #define BITS_7_6_5 (0xE0) // 8 0 + 4 0 + 2 0 = 14 0 = 0xE0
 #define BITS_7_6_5_4 (0xF0) // 8 0 + 4 0 + 2 0 + 1 0 = 15 0 = 0xF0
 
-// Definição dos modos do LCD
-#define ModoInstrucao (BIT2) // [EN = 1, RW = 0, RS = 0] -> Modo Instrução
-#define ModoEscritaDados (BITS_2_0) // [EN = 1, RW = 0, RS = 1] -> Modo Dados
-#define ModoLeituraBusyEndereco (BITS_2_1) // [EN = 1, RW = 1, RS = 0] -> Modo de Leitura de Busy Flag e de valor de Endereço
-#define ModoLeituraRAM (BITS_2_1_0) // [EN = 1, RW = 1, RS = 1] -> Modo de Leitura da RAM
-
-// Definição das instruções do LCD no Modo Instrução [0 = 0 | 1 = 1 | X = Irrelevante (Não importa) | V = Variável]
-
-// [BIT7 = 0 | BIT6 = 0 | BIT5 = 0 | BIT4 = 0 | BIT3 = 0 | BIT2 = 0 | BIT1 = 0 | BIT0 = 1]
-#define LimpaLCD (BIT0) // Limpa o Display LCD
-
-// [BIT7 = 0 | BIT6 = 0 | BIT5 = 0 | BIT4 = 0 | BIT3 = 0 | BIT2 = 0 | BIT1 = 1 | BIT0 = X]
-#define ReiniciaCursor (BIT1) // Reinicia a posição do cursor
-
-// [BIT7 = 0 | BIT6 = 0 | BIT5 = 0 | BIT4 = 0 | BIT3 = 0 | BIT2 = 1 | BIT1 = V | BIT0 = V]
-#define ConfiguraCursorEsquerda (BIT2) // [Cursor move para a esquerda | Desativa deslocamento do display]
-#define ConfiguraCursorDireita (BITS_2_1) // [Cursor move para a direita | Desativa deslocamento do display]
-#define ConfiguraDisplayDireita (BITS_2_0) // [Display move para a direita | Ativa deslocamento do display]
-#define ConfiguraDisplayEsquerda (BITS_2_1_0) // [Display move para a esquerda | Ativa deslocamento do display]
-
-// [BIT7 = 0 | BIT6 = 0 | BIT5 = 0 | BIT4 = 0 | BIT3 = 1 | BIT2 = V | BIT1 = V | BIT0 = V]
-#define DisplayD_CursorD_PiscanteD (BIT3) // [Desativa display | Desativa cursor | Desativa piscante]
-#define DisplayD_CursorD_PiscanteA (BITS_3_0) // [Desativa display | Desativa cursor | Ativa piscante]
-#define DisplayD_CursorA_PiscanteD (BITS_3_1) // [Desativa display | Ativa cursor | Desativa piscante]
-#define DisplayD_CursorA_PiscanteA (BITS_3_1_0) // [Desativa display | Ativa cursor | Ativa piscante]
-#define DisplayA_CursorD_PiscanteD (BITS_3_2) // [Ativa display | Desativa cursor | Desativa piscante]
-#define DisplayA_CursorD_PiscanteA (BITS_3_2_0) // [Ativa display | Desativa cursor | Ativa piscante]
-#define DisplayA_CursorA_PiscanteD (BITS_3_2_1) // [Ativa display | Ativa cursor | Desativa piscante]
-#define DisplayA_CursorA_PiscanteA (BITS_3_2_1_0) // [Ativa display | Ativa cursor | Ativa piscante]
-
-// [BIT7 = 0 | BIT6 = 0 | BIT5 = 0 | BIT4 = 1 | BIT3 = V | BIT2 = V | BIT1 = X | BIT0 = X]
-#define DeslocaCursorEsquerda (BIT4) // [Desloca cursor | Deslocamento para a esquerda]
-#define DeslocaCursorDireita (BIT4 | BIT2) // [Desloca cursor | Deslocamento para a direita]
-#define DeslocaDisplayEsquerda (BIT4 | BIT3) // [Desloca display | Deslocamento para a esquerda]
-#define DeslocaDisplayDireita (BIT4 | BITS_3_2) // [Desloca display | Deslocamento para a direita]
-
-// [BIT7 = 0 | BIT6 = 0 | BIT5 = 1 | BIT4 = V | BIT3 = V | BIT2 = V | BIT1 = X | BIT0 = X]
-#define Modo_4Bits_1Linha_5x8Pontos (BIT5) // [Barramento 4 bits | Display em 1 linha | Caractere com 5x8 pontos]
-#define Modo_4Bits_1Linha_5x11Pontos (BIT5 | BIT2) // [Barramento 4 bits | Display em 1 linha | Caractere com 5x11 pontos]
-#define Modo_4Bits_2Linhas_5x8Pontos (BIT5 | BIT3) // [Barramento 4 bits | Display em 2 linhas | Caractere com 5x8 pontos]
-#define Modo_4Bits_2Linhas_5x11Pontos (BIT5 | BITS_3_2) // [Barramento 4 bits | Display em 2 linhas | Caractere com 5x11 pontos]
-#define Modo_8Bits_1Linha_5x8Pontos (BITS_5_4) // [Barramento 8 bits | Display em 1 linha | Caractere com 5x8 pontos]
-#define Modo_8Bits_1Linha_5x11Pontos (BITS_5_4 | BIT2) // [Barramento 8 bits | Display em 1 linha | Caractere com 5x11 pontos]
-#define Modo_8Bits_2Linhas_5x8Pontos (BITS_5_4 | BIT3) // [Barramento 8 bits | Display em 2 linhas | Caractere com 5x8 pontos]
-#define Modo_8Bits_2Linhas_5x11Pontos (BITS_5_4 | BITS_3_2) // [Barramento 8 bits | Display em 2 linhas | Caractere com 5x11 pontos]
-
-// [BIT7 = 0 | BIT6 = 1 | (BIT5 | BIT4 | BIT3 | BIT2 | BIT1 | BIT0) = V]
-#define CarregaEnderecoCaractere (BIT6) // Carrega o contador de endereço com o endereço do gerador de caractere fornecido (6 bits - BIT0 até BIT5)
-
-// [BIT7 = 1 | (BIT6 | BIT5 | BIT4 | BIT3 | BIT2 | BIT1 | BIT0) = V]
-#define MoveCursorLinha1 (BIT7) // Carrega o contador de endereço com o endereço de display fornecido (7 bits - BIT0 até BIT6) [Linha 1]
-#define MoveCursorLinha2 (BITS_7_6) // Carrega o contador de endereço com o endereço de display fornecido (7 bits - BIT0 até BIT6) [Linha 2]
-
-
-// Definição do tempo para alternar mensagens
-#define TempoMensagem (1000)
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #define TAM_VET (24000) //constante que determina o tamanho do vetor de leituras
@@ -135,6 +77,10 @@ uint16_t n_baixos; //armazena a quantidade de leituras baixas
 double periodo; //armazena o calculo do período
 double frequencia; //armazena o calculo da frequência
 double duty_cycle; //armazena o calculo do duty cycle
+
+uint32_t t_altos[TAM_VETOR];      //armazena a quantidade de leituras altas
+uint32_t t_baixos[TAM_VETOR];     //armazena a quantidade de leituras baixas;
+double duty_cycle_1;            //Armazena o calculo do duty cycle
 
 uint8_t freq_decimal;
 uint8_t duty_cycle_decimal;
@@ -194,20 +140,15 @@ void main(void){
   TimerInit();
   PortM_Output(BIT6);
   
-  uint64_t valorTimer = 0;
-  
   while(1){
-    /*i_vet = 0;*/
-    
-    //adquireAmostras();
+    if(amostragemPronta()) {
+      //calcula();
+      UARTprintf("Duty cycle: \%d\%\%\n", duty_cycle_1);
+      UARTprintf("Tempo Alto: \%d\n", t_altos[0]);
+      UARTprintf("Tempo Baixo: \%d\n\n", t_baixos[0]);
+      resetaAmostragemPronta();
+    }
     /*
-    i_vet = 1;
-    num_transicoes = 0;
-    num_baixos_altos[0] = 0;
-    num_baixos_altos[1] = 0;
-    
-    contaBaixosAltos();
-    
     if(num_transicoes > 0) {
        computaResultados();
     }
@@ -217,6 +158,6 @@ void main(void){
     }*/
     //valorTimer = TimerValueGet64(TIMER0_BASE);
     //PortA_Output(valorTimer >> 60);
-    entrada_D0 = GPIOPinRead(GPIO_PORTD_BASE, GPIO_PIN_0);
+    //entrada_D0 = GPIOPinRead(GPIO_PORTD_BASE, GPIO_PIN_0);
   }
 } // main

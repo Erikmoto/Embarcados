@@ -2391,7 +2391,10 @@
         <name>$PROJ_DIR$\src\system_TM4C1294_TW.c</name>
     </file>
     <file>
-        <name>$PROJ_DIR$\src\TimerInit.c</name>
+        <name>$PROJ_DIR$\src\temporizador.c</name>
+    </file>
+    <file>
+        <name>$PROJ_DIR$\src\temporizador.h</name>
     </file>
     <file>
         <name>$PROJ_DIR$\src\TM4C1294NCPDT.h</name>
