@@ -8,11 +8,65 @@
 #include "driverlib/systick.h"
 #include "driverlib/pin_map.h"
 
-#include "system_TM4C1294.h" 
+#include "system_TM4C1294.h"
+
+#define TAM_VETOR (24000)         //constante que determina o tamanho do vetor de leituras
+bool subida = 0;                 // Armazena a leitura do pino de entrada
+uint16_t t_altos[TAM_VETOR];      //armazena a quantidade de leituras altas
+uint16_t t_baixos[TAM_VETOR];     //armazena a quantidade de leituras baixas
+uint16_t count;                 //Conta as vezes que a interrupção ocorreu 
+uint16_t t;                     //Indice utilizado para percorrer os vetores
+double media_alto;            //Armazena a media dos tempos altos
+double media_baixo;           //Armazena a media dos tempos baixos
+double duty_cycle_1;            //Armazena o calculo do duty cycle
+void calcula()
+{
+  //Zera as variaveis
+  t=0;
+  media_alto = 0;
+  media_baixo = 0;
+  
+  //Soma todos os valores dos vetores
+  while(t<=TAM_VETOR)
+  {
+    media_alto = media_alto + t_altos[t];
+    media_baixo = media_baixo + t_baixos[t];
+    t++;
+  }
+  
+  //Divide pela quantidade de leituras para obter a media
+  media_alto = media_alto/TAM_VETOR;
+  media_baixo = media_baixo/TAM_VETOR;
+  
+  //Calcula o duty cycle
+  duty_cycle_1 = media_alto/(media_alto+media_baixo);
+}
 
 void TIMER0A_Handler() {
   TimerLoadSet(TIMER0_BASE, TIMER_A, 0);
   TimerIntClear(TIMER0_BASE, TIMER_CAPA_EVENT);
+  
+  subida = GPIOPinRead(GPIO_PORTD_BASE, GPIO_PIN_0);// Armazena a leitura do pino de entrada
+  
+  //Salva o tempo desde a ultima borda no vetor apropriado
+  if(subida)
+  {
+    t_baixos[count/2] = 9; //Substituir 9 pela leitura do timer
+  }
+  else
+  {
+    t_altos[count/2] = 9; //Substituir 9 pela leitura do timer
+  }
+  
+  //Se preencheu o vetor, zera count e chama a função de cálculo
+  if((count/2) >= TAM_VETOR)
+  {
+    count = -1;
+    calcula();
+  }
+  
+  //Aumenta 1 no count. Com exceção quando a primeira borda seja uma descida
+  if((count == 0)&&(!subida))count ++;  
 }
 
 void TimerInit(void){
