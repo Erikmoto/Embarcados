@@ -65,74 +65,62 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#define TAM_VET (24000) //constante que determina o tamanho do vetor de leituras
-
-uint16_t i_vet; //Indice utilizado em loop para percorrer o vetor de leituras
-bool vet[TAM_VET]; //vetor que armazena as ultimas leituras
-uint8_t num_transicoes; //variável utilizada para contar o número de transições/bordas
-uint16_t num_baixos_altos[2]; //vetor para contar a quantidade de leituras em baixas e altas
-double k; //constante para conversão para milisegundos
-uint16_t n_altos; //armazena a quantidade de leituras altas
-uint16_t n_baixos; //armazena a quantidade de leituras baixas
-double periodo; //armazena o calculo do período
-double frequencia; //armazena o calculo da frequência
-double duty_cycle; //armazena o calculo do duty cycle
+#define LIMITE_TIMEOUT 10000000
 
 uint32_t t_altos[TAM_VETOR];      //armazena a quantidade de leituras altas
 uint32_t t_baixos[TAM_VETOR];     //armazena a quantidade de leituras baixas;
-double duty_cycle_1;            //Armazena o calculo do duty cycle
+double duty_cycle;            //Armazena o calculo do duty cycle
+
+double media_alto;            //Armazena a media dos tempos altos
+double media_baixo;           //Armazena a media dos tempos baixos
+
+double periodoTiva;
+double periodo;
+double periodo_alto;
+double periodo_baixo;
+double frequencia;
 
 uint8_t freq_decimal;
 uint8_t duty_cycle_decimal;
 
-void computaResultados() {
-  k = (-0.000000627) * (SystemCoreClock - 24000000) + 91.3; //31.1; //91.3;//3*1000/24000000;
-  n_baixos = num_baixos_altos[0];
-  n_altos = num_baixos_altos[1];
-  periodo = k * (n_baixos + n_altos);
-  frequencia = (double)(1000000 / periodo);
-  freq_decimal = (frequencia - (uint32_t)frequencia) * 100;
-  duty_cycle = ((double)n_altos / (n_altos + n_baixos)) * 10000;
-  duty_cycle_decimal = (duty_cycle - (uint32_t)duty_cycle) * 100;
-  duty_cycle = duty_cycle / 100;
+void calcula()
+{
+  //Zera as variaveis
+  uint16_t t = 0;
   
-  UARTprintf("Altos: %d\n", n_altos);
-  UARTprintf("Baixos: %d\n", n_baixos);
-  UARTprintf("Periodo: %d ns\n",(uint32_t)periodo);
-  UARTprintf("Frequencia: %d,%d kHz\n", (uint32_t)frequencia, freq_decimal);
+  media_alto = 0;
+  media_baixo = 0;
+  
+  //Divide pela quantidade de leituras para obter a media
+  for(t = 2; t < TAM_VETOR; t++) {
+    media_alto = media_alto + (double)t_altos[t] / (TAM_VETOR - 2);
+    media_baixo = media_baixo + (double)t_baixos[t] / (TAM_VETOR - 2);
+  }
+  
+  periodo_alto = media_alto * periodoTiva;
+  periodo_baixo = media_baixo * periodoTiva;
+  periodo = periodo_alto + periodo_baixo;
+  
+  frequencia = 1 / periodo;
+  
+  //Calcula o duty cycle
+  duty_cycle = media_alto/(media_alto+media_baixo);
+  
+  if(duty_cycle >= 0.99) {
+    UARTprintf("Time Out\n");
+  }
+}
+
+void imprime(void) {
+  duty_cycle = duty_cycle * 100;
+  duty_cycle_decimal = (duty_cycle - (uint32_t)duty_cycle) * 100;
+  //duty_cycle = (uint8_t)duty_cycle;
+  
+  frequencia = frequencia * 1000000;
+  
   UARTprintf("Duty cycle: \%d,%d\%\%\n\n", (uint8_t)duty_cycle, (uint8_t)duty_cycle_decimal);
+  UARTprintf("Frequencia: \%d\n", (uint32_t)frequencia);
 }
-
-void adquireAmostras() {
-  while(i_vet < TAM_VET) {
-    vet[i_vet] = GPIOPinRead(GPIO_PORTD_BASE, GPIO_PIN_0);
-    PortA_Output(PortC_Input());
-    i_vet++;
-  }
-}
-
-void contaBaixosAltos() {
-  while(i_vet < TAM_VET) {
-    if(num_transicoes > 0) {
-      if(num_transicoes == 101) {
-        break;
-      }
-      
-      else {
-        num_baixos_altos[vet[i_vet - 1]]++;
-      }
-    }
-    
-    if(vet[i_vet] != vet[i_vet - 1]) {
-      num_transicoes++;
-      
-    }
-    
-    i_vet++;
-  }
-}
-
-bool entrada_D0 = 0;
 
 void main(void){
   GPIO_Init();
@@ -140,24 +128,33 @@ void main(void){
   TimerInit();
   PortM_Output(BIT6);
   
+  periodoTiva = 1 / (SystemCoreClock * 1000000);
+  
+  uint32_t contagemTimeout = 0;
+  
   while(1){
-    if(amostragemPronta()) {
-      //calcula();
-      UARTprintf("Duty cycle: \%d\%\%\n", duty_cycle_1);
-      UARTprintf("Tempo Alto: \%d\n", t_altos[0]);
-      UARTprintf("Tempo Baixo: \%d\n\n", t_baixos[0]);
-      resetaAmostragemPronta();
-    }
-    /*
-    if(num_transicoes > 0) {
-       computaResultados();
-    }
-    else {
-      UARTprintf("Erro: Nenhuma borda detectada\n");
+    ativaAmostragem();
+    
+    if(contagemTimeout < LIMITE_TIMEOUT) {
+      if(amostragemPronta()) {
+        desativaAmostragem();
+        
+        calcula();
+        
+        imprime();
+        
+        contagemTimeout = 0;
+        resetaAmostragemPronta();
+      }
       
-    }*/
-    //valorTimer = TimerValueGet64(TIMER0_BASE);
-    //PortA_Output(valorTimer >> 60);
-    //entrada_D0 = GPIOPinRead(GPIO_PORTD_BASE, GPIO_PIN_0);
+      else {
+        contagemTimeout++;
+      }
+    }
+    
+    else {
+      contagemTimeout = 0;
+      UARTprintf("Time Out\n");
+    }
   }
 } // main

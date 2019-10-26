@@ -13,12 +13,13 @@
 
 #include "temporizador.h"
 
+#define VALOR_MIN 10
+#define VALOR_MAX 65500
+
 bool subida = 0;                 // Armazena a leitura do pino de entrada
 uint16_t count = 0;                 //Conta as vezes que a interrupção ocorreu
-
-uint32_t load;
-uint32_t value;
-
+uint32_t ultimoValorAlto = 0;
+uint32_t ultimoValorBaixo = 0;
 bool amostrasFeitas = false;
 
 bool amostragemPronta(void) {
@@ -27,87 +28,66 @@ bool amostragemPronta(void) {
 
 void resetaAmostragemPronta(void) {
   amostrasFeitas = false;
-  TimerIntEnable(TIMER0_BASE, TIMER_CAPA_EVENT);
-}
-
-uint32_t *getTemposAltos(void) {
-  return t_altos;
-}
-
-uint32_t *getTemposBaixos(void) {
-  return t_baixos;
-}
-
-uint16_t t;                     //Indice utilizado para percorrer os vetores
-double media_alto;            //Armazena a media dos tempos altos
-double media_baixo;           //Armazena a media dos tempos baixos
-
-void calcula()
-{
-  //Zera as variaveis
-  t=0;
-  media_alto = 0;
-  media_baixo = 0;
-  
-  //uint32_t t_altos[TAM_VET], t_baixos[TAM_VET];
-  
-  //t_altos = getTemposAltos();
-  
-  //t_baixos = getTemposBaixos();
-  
-  //Soma todos os valores dos vetores
-  while(t<=TAM_VETOR)
-  {
-    media_alto = media_alto + t_altos[t];
-    media_baixo = media_baixo + t_baixos[t];
-    t++;
-  }
-  
-  //Divide pela quantidade de leituras para obter a media
-  media_alto = media_alto/TAM_VETOR;
-  media_baixo = media_baixo/TAM_VETOR;
-  
-  //Calcula o duty cycle
-  duty_cycle_1 = media_alto/(media_alto+media_baixo);
+  ativaAmostragem();
 }
 
 void TIMER0A_Handler() {
-  if(subida == 0) {
-    subida = 1;
-    TimerControlEvent(TIMER0_BASE, TIMER_A, TIMER_EVENT_NEG_EDGE);
+  uint16_t indice = count / 2;
+  
+  if(count > 0) {
+    if(indice < TAM_VETOR) {
+      uint32_t periodo;
+      uint32_t valorTimer;
+      
+      valorTimer = TimerValueGet(TIMER0_BASE, TIMER_A); //Leitura do timer
+      
+      if(valorTimer < ultimoValorAlto) {
+        //periodo = valorTimer + (0xFFFFFFFF - ultimoValorAlto);
+        ultimoValorBaixo = valorTimer;
+      }
+      
+      else {
+        periodo = valorTimer - ultimoValorAlto;
+        ultimoValorBaixo = valorTimer;
+        t_baixos[indice] = periodo;
+      }
+      
+      count++;
+    }
+    
+    else {
+      count = 0;
+      amostrasFeitas = true;
+    }
   }
   
-  else {
-    subida = 0;
-    TimerControlEvent(TIMER0_BASE, TIMER_A, TIMER_EVENT_POS_EDGE);
-  }
+  TimerLoadSet(TIMER0_BASE, TIMER_A, 0);
+  TimerIntClear(TIMER0_BASE, TIMER_CAPA_EVENT);
+}
+
+void TIMER1A_Handler(void) {
+  uint16_t indice = count / 2;
   
-  //Salva o tempo desde a ultima borda no vetor apropriado
-  if(subida == 1)
-  {
-    t_baixos[count/2] = TimerValueGet(TIMER0_BASE, TIMER_A); //Leitura do timer
-  }
-  else
-  {
-    t_altos[count/2] = TimerValueGet(TIMER0_BASE, TIMER_A); //Leitura do timer
-  }
-  
-  //Se preencheu o vetor, zera count e chama a função de cálculo
-  if((count/2) >= TAM_VETOR)
-  {
-    count = 0;
-    TimerIntDisable(TIMER0_BASE, TIMER_CAPA_EVENT);
-    calcula();
-    amostrasFeitas = true;
-  }
-  
-  //Aumenta 1 no count. Com exceção quando a primeira borda seja uma descida
-  if(!((count == 0) && (subida == 0))) {
+  if(indice < TAM_VETOR) {
+    uint32_t valorTimer = TimerValueGet(TIMER1_BASE, TIMER_A); //Leitura do timer
+    uint32_t periodo = valorTimer - ultimoValorBaixo;
+    
+    if(valorTimer < ultimoValorAlto) {
+      //periodo = valorTimer + (0xFFFFFFFF - ultimoValorBaixo);
+      ultimoValorAlto = valorTimer;
+    }
+    
+    else {
+      ultimoValorAlto = valorTimer;
+      periodo = valorTimer - ultimoValorBaixo;
+      t_altos[indice] = periodo;
+    }
+
     count++;
   }
   
-  //TimerLoadSet(TIMER0_BASE, TIMER_A, 0);
-  TimerIntClear(TIMER0_BASE, TIMER_CAPA_EVENT);
+  TimerLoadSet(TIMER1_BASE, TIMER_A, 0);
+  TimerIntClear(TIMER1_BASE, TIMER_CAPA_EVENT);
 }
 
 void TimerInit(void){
@@ -121,19 +101,42 @@ void TimerInit(void){
   
   GPIOPinConfigure(GPIO_PD0_T0CCP0);
   GPIOPinTypeTimer(GPIO_PORTD_BASE, GPIO_PIN_0);
-  //GPIOPinTypeGPIOInput(GPIO_PORTD_BASE, GPIO_PIN_0);
+  
+  // Enable Timer 0
+  SysCtlPeripheralEnable(SYSCTL_PERIPH_TIMER1);
+  while(!SysCtlPeripheralReady(SYSCTL_PERIPH_TIMER1));
+  
+  GPIOPinConfigure(GPIO_PD2_T1CCP0);
+  GPIOPinTypeTimer(GPIO_PORTD_BASE, GPIO_PIN_2);
+  
   GPIOPadConfigSet(GPIO_PORTD_BASE, GPIO_PIN_0, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPD);
+  GPIOPadConfigSet(GPIO_PORTD_BASE, GPIO_PIN_2, GPIO_STRENGTH_2MA, GPIO_PIN_TYPE_STD_WPD);
   
   TimerConfigure(TIMER0_BASE, (TIMER_CFG_SPLIT_PAIR | TIMER_CFG_A_CAP_TIME_UP));
+  TimerConfigure(TIMER1_BASE, (TIMER_CFG_SPLIT_PAIR | TIMER_CFG_A_CAP_TIME_UP));
   
-  //TimerControlLevel(TIMER0_BASE, TIMER_A, true);
-  //TimerPrescaleSet(TIMER0_BASE, TIMER_A, 10);
-  //TimerLoadSet(TIMER0_BASE, TIMER_A, 0);
-  //TimerMatchSet(TIMER0_BASE, TIMER_A, pulseTimeWidth);
+  TimerPrescaleSet(TIMER0_BASE, TIMER_A, 200);
+  TimerPrescaleSet(TIMER1_BASE, TIMER_A, 200);
+  
   TimerControlEvent(TIMER0_BASE, TIMER_A, TIMER_EVENT_POS_EDGE);
+  TimerControlEvent(TIMER1_BASE, TIMER_A, TIMER_EVENT_NEG_EDGE);
   
   TimerIntRegister(TIMER0_BASE, TIMER_A, TIMER0A_Handler);
+  TimerIntRegister(TIMER1_BASE, TIMER_A, TIMER1A_Handler);
+  
   TimerIntClear(TIMER0_BASE, TIMER_CAPA_EVENT);
-  TimerIntEnable(TIMER0_BASE, TIMER_CAPA_EVENT);
+  TimerIntClear(TIMER1_BASE, TIMER_CAPA_EVENT);
+  
   TimerEnable(TIMER0_BASE, TIMER_A);
+  TimerEnable(TIMER1_BASE, TIMER_A);
 } // TimerInit
+
+void ativaAmostragem(void) {
+  TimerIntEnable(TIMER0_BASE, TIMER_CAPA_EVENT);
+  TimerIntEnable(TIMER1_BASE, TIMER_CAPA_EVENT);
+}
+
+void desativaAmostragem(void) {
+  TimerIntDisable(TIMER0_BASE, TIMER_CAPA_EVENT);
+  TimerIntDisable(TIMER1_BASE, TIMER_CAPA_EVENT);
+}

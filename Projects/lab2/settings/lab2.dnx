@@ -53,7 +53,7 @@
         <LMIFTDIfoundProbes />
     </LMIFTDIDriver>
     <DebugChecksum>
-        <Checksum>242581863</Checksum>
+        <Checksum>4190576399</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -65,6 +65,10 @@
     <Disassembly>
         <MixedMode>1</MixedMode>
     </Disassembly>
+    <watch_formats>
+        <Fmt0>{W}1:duty_cycle_decimal	3	0</Fmt0>
+        <Fmt1>{W}1:multiplicador	3	0</Fmt1>
+    </watch_formats>
     <DisassembleMode>
         <mode>0</mode>
     </DisassembleMode>
@@ -82,10 +86,11 @@
     </LogFile>
     <Aliases>
         <A0>_ "C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\TivaWare_C_Series-2.1.4.178\driverlib\interrupt.c" ""</A0>
-        <A1>_ "C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\TivaWare_C_Series-2.1.4.178\driverlib\timer.c" "C:\Users\Jordão\Documents\GitHub\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\timer.c"</A1>
-        <A2>_ "C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\TivaWare_C_Series-2.1.4.178\driverlib\uart.c" ""</A2>
-        <A3>_ "C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\src\main.c" "C:\Users\Jordão\Documents\GitHub\Embarcados\Projects\lab2\src\main.c"</A3>
-        <Count>4</Count>
+        <A1>_ "C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\TivaWare_C_Series-2.1.4.178\driverlib\sysctl.c" ""</A1>
+        <A2>_ "C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\TivaWare_C_Series-2.1.4.178\driverlib\timer.c" ""</A2>
+        <A3>_ "C:\Users\ryuic\Downloads\EK-TM4C1294_IAR8\TivaWare_C_Series-2.1.4.178\driverlib\uart.c" "C:\Users\ryuic\Downloads\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\uart.c"</A3>
+        <A4>_ "C:\Users\ryuic\Downloads\Embarcados\Projects\lab2\src\main.c" "C:\Users\Jordão\Documents\GitHub\Embarcados\Projects\lab2\src\main.c"</A4>
+        <Count>5</Count>
         <SuppressDialog>0</SuppressDialog>
     </Aliases>
     <CallStackLog>
