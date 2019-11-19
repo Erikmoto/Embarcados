@@ -9,6 +9,7 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <math.h>
 // includes da biblioteca driverlib
 #include "inc/hw_memmap.h"
 #include "driverlib/gpio.h"
@@ -65,23 +66,42 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-#define LIMITE_TIMEOUT 10000000
+int64_t t_altos[TAM_VETOR];      //armazena a quantidade de leituras altas
+int64_t t_baixos[TAM_VETOR];     //armazena a quantidade de leituras baixas;
 
-uint32_t t_altos[TAM_VETOR];      //armazena a quantidade de leituras altas
-uint32_t t_baixos[TAM_VETOR];     //armazena a quantidade de leituras baixas;
+uint32_t leiturasAltos[TAM_VETOR];
+uint32_t leiturasBaixos[TAM_VETOR]; 
+
 double duty_cycle;            //Armazena o calculo do duty cycle
 
 double media_alto;            //Armazena a media dos tempos altos
 double media_baixo;           //Armazena a media dos tempos baixos
 
-double periodoTiva;
+double periodoTiva_ns;
 double periodo;
 double periodo_alto;
 double periodo_baixo;
+double frequenciaTiva_MHz;
 double frequencia;
 
 uint8_t freq_decimal;
 uint8_t duty_cycle_decimal;
+
+void trataLeituras(void) {
+  uint16_t i;
+  
+  t_altos[0] = leiturasAltos[0];
+  
+  for(i = 1; i < TAM_VETOR; i++) {
+    if(leiturasBaixos[i] > leiturasAltos[i]) {
+      t_altos[i] = leiturasBaixos[i] - leiturasAltos[i];
+    }
+    
+    if(leiturasAltos[i] > leiturasBaixos[i - 1]) {
+      t_baixos[i] = leiturasAltos[i] - leiturasBaixos[i - 1];
+    }
+  }
+}
 
 void calcula()
 {
@@ -93,33 +113,33 @@ void calcula()
   
   //Divide pela quantidade de leituras para obter a media
   for(t = 2; t < TAM_VETOR; t++) {
-    media_alto = media_alto + (double)t_altos[t] / (TAM_VETOR - 2);
-    media_baixo = media_baixo + (double)t_baixos[t] / (TAM_VETOR - 2);
+    media_alto = media_alto + (double)t_altos[t] / TAM_VETOR;
+    media_baixo = media_baixo + (double)t_baixos[t] / TAM_VETOR;
   }
   
-  periodo_alto = media_alto * periodoTiva;
-  periodo_baixo = media_baixo * periodoTiva;
+  periodo_alto = media_alto * periodoTiva_ns;
+  periodo_baixo = media_baixo * periodoTiva_ns;
   periodo = periodo_alto + periodo_baixo;
   
-  frequencia = 1 / periodo;
+  frequencia = 1000000000 / periodo;
   
   //Calcula o duty cycle
-  duty_cycle = media_alto/(media_alto+media_baixo);
-  
+  duty_cycle = media_alto / (media_alto + media_baixo);
+  /*
   if(duty_cycle >= 0.99) {
     UARTprintf("Time Out\n");
   }
+  */
 }
 
 void imprime(void) {
   duty_cycle = duty_cycle * 100;
-  duty_cycle_decimal = (duty_cycle - (uint32_t)duty_cycle) * 100;
+  duty_cycle_decimal = (uint32_t)((duty_cycle - (uint32_t)duty_cycle) * 100);
   //duty_cycle = (uint8_t)duty_cycle;
   
-  frequencia = frequencia * 1000000;
-  
-  UARTprintf("Duty cycle: \%d,%d\%\%\n\n", (uint8_t)duty_cycle, (uint8_t)duty_cycle_decimal);
-  UARTprintf("Frequencia: \%d\n", (uint32_t)frequencia);
+  UARTprintf("Duty cycle: %d,%d\%\%\n\n", (uint8_t)duty_cycle, (uint8_t)duty_cycle_decimal);
+  UARTprintf("Periodo: %d ns\n", (uint32_t)periodo);
+  UARTprintf("Frequencia: %d Hz\n", (uint32_t)frequencia);
 }
 
 void main(void){
@@ -128,23 +148,28 @@ void main(void){
   TimerInit();
   PortM_Output(BIT6);
   
-  periodoTiva = 1 / (SystemCoreClock * 1000000);
+  frequenciaTiva_MHz = SystemCoreClock / 1000000;
+  periodoTiva_ns = (1 / frequenciaTiva_MHz) * 1000;
   
   uint32_t contagemTimeout = 0;
+  uint32_t valor_ms_ns = 1000000;
+  uint32_t limite_timeout = (uint32_t)round((20 * valor_ms_ns) / periodoTiva_ns);
   
   while(1){
     ativaAmostragem();
     
-    if(contagemTimeout < LIMITE_TIMEOUT) {
+    if(contagemTimeout < limite_timeout) {
       if(amostragemPronta()) {
         desativaAmostragem();
+        
+        trataLeituras();
         
         calcula();
         
         imprime();
         
         contagemTimeout = 0;
-        resetaAmostragemPronta();
+        resetaAmostragem();
       }
       
       else {

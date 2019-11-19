@@ -13,81 +13,59 @@
 
 #include "temporizador.h"
 
-#define VALOR_MIN 10
-#define VALOR_MAX 65500
+bool amostrasAltasFeitas = false;
+bool amostrasBaixasFeitas = false;
 
-bool subida = 0;                 // Armazena a leitura do pino de entrada
-uint16_t count = 0;                 //Conta as vezes que a interrupção ocorreu
-uint32_t ultimoValorAlto = 0;
-uint32_t ultimoValorBaixo = 0;
-bool amostrasFeitas = false;
+uint16_t indiceAltos = 0;
+uint16_t indiceBaixos = 0;
 
 bool amostragemPronta(void) {
-  return amostrasFeitas;
+  return(amostrasAltasFeitas && amostrasBaixasFeitas);
 }
 
-void resetaAmostragemPronta(void) {
-  amostrasFeitas = false;
+void resetaAmostragem(void) {
+  amostrasAltasFeitas = false;
+  amostrasBaixasFeitas = false;
+  
+  indiceAltos = 0;
+  indiceBaixos = 0;
+  
+  TimerLoadSet(TIMER0_BASE, TIMER_A, 0);
+  TimerLoadSet(TIMER1_BASE, TIMER_A, 0);
+  
   ativaAmostragem();
 }
 
-void TIMER0A_Handler() {
-  uint16_t indice = count / 2;
-  
-  if(count > 0) {
-    if(indice < TAM_VETOR) {
-      uint32_t periodo;
-      uint32_t valorTimer;
-      
-      valorTimer = TimerValueGet(TIMER0_BASE, TIMER_A); //Leitura do timer
-      
-      if(valorTimer < ultimoValorAlto) {
-        //periodo = valorTimer + (0xFFFFFFFF - ultimoValorAlto);
-        ultimoValorBaixo = valorTimer;
-      }
-      
-      else {
-        periodo = valorTimer - ultimoValorAlto;
-        ultimoValorBaixo = valorTimer;
-        t_baixos[indice] = periodo;
-      }
-      
-      count++;
-    }
-    
-    else {
-      count = 0;
-      amostrasFeitas = true;
+void TIMER1A_Handler() {
+  if(indiceAltos < TAM_VETOR) {
+    if(indiceAltos == indiceBaixos) {
+      leiturasAltos[indiceAltos] = TimerValueGet(TIMER1_BASE, TIMER_A);
+      indiceAltos++;
     }
   }
   
-  TimerLoadSet(TIMER0_BASE, TIMER_A, 0);
-  TimerIntClear(TIMER0_BASE, TIMER_CAPA_EVENT);
+  else {
+    amostrasAltasFeitas = true;
+  }
+  
+  TimerIntClear(TIMER1_BASE, TIMER_CAPA_EVENT);
 }
 
-void TIMER1A_Handler(void) {
-  uint16_t indice = count / 2;
-  
-  if(indice < TAM_VETOR) {
-    uint32_t valorTimer = TimerValueGet(TIMER1_BASE, TIMER_A); //Leitura do timer
-    uint32_t periodo = valorTimer - ultimoValorBaixo;
-    
-    if(valorTimer < ultimoValorAlto) {
-      //periodo = valorTimer + (0xFFFFFFFF - ultimoValorBaixo);
-      ultimoValorAlto = valorTimer;
+void TIMER0A_Handler(void) {
+  if(indiceAltos > 0) {
+    if(indiceBaixos < TAM_VETOR) {
+      if(indiceBaixos == indiceAltos - 1) {
+        leiturasBaixos[indiceBaixos] = TimerValueGet(TIMER0_BASE, TIMER_A);
+        indiceBaixos++;
+      }
     }
     
     else {
-      ultimoValorAlto = valorTimer;
-      periodo = valorTimer - ultimoValorBaixo;
-      t_altos[indice] = periodo;
+      amostrasBaixasFeitas = true;
     }
-
-    count++;
   }
   
-  TimerLoadSet(TIMER1_BASE, TIMER_A, 0);
-  TimerIntClear(TIMER1_BASE, TIMER_CAPA_EVENT);
+  TimerIntClear(TIMER0_BASE, TIMER_CAPA_EVENT);
 }
 
 void TimerInit(void){
@@ -118,8 +96,8 @@ void TimerInit(void){
   TimerPrescaleSet(TIMER0_BASE, TIMER_A, 200);
   TimerPrescaleSet(TIMER1_BASE, TIMER_A, 200);
   
-  TimerControlEvent(TIMER0_BASE, TIMER_A, TIMER_EVENT_POS_EDGE);
-  TimerControlEvent(TIMER1_BASE, TIMER_A, TIMER_EVENT_NEG_EDGE);
+  TimerControlEvent(TIMER0_BASE, TIMER_A, TIMER_EVENT_NEG_EDGE);
+  TimerControlEvent(TIMER1_BASE, TIMER_A, TIMER_EVENT_POS_EDGE);
   
   TimerIntRegister(TIMER0_BASE, TIMER_A, TIMER0A_Handler);
   TimerIntRegister(TIMER1_BASE, TIMER_A, TIMER1A_Handler);
