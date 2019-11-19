@@ -741,7 +741,7 @@
                     <item>periodoTiva_ns</item>
                     <item>frequenciaTiva_MHz</item>
                     <item>limite_timeout</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
