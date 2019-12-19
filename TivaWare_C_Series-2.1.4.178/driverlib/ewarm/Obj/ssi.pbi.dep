@@ -1,0 +1,16 @@
+ssi.pbi: \
+  C:\Users\ryuic\Downloads\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\ssi.c \
+  D:\Programas\IAR\arm\inc\c\stdbool.h \
+  D:\Programas\IAR\arm\inc\c\stdint.h \
+  D:\Programas\IAR\arm\inc\c\ycheck.h D:\Programas\IAR\arm\inc\c\yvals.h \
+  D:\Programas\IAR\arm\inc\c\DLib_Defaults.h \
+  D:\\Programas\\IAR\\arm\\inc\\c\\DLib_Config_Normal.h \
+  D:\Programas\IAR\arm\inc\c\DLib_Product.h \
+  C:\Users\ryuic\Downloads\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\..\inc/hw_ints.h \
+  C:\Users\ryuic\Downloads\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\..\inc/hw_memmap.h \
+  C:\Users\ryuic\Downloads\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\..\inc/hw_ssi.h \
+  C:\Users\ryuic\Downloads\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\..\inc/hw_sysctl.h \
+  C:\Users\ryuic\Downloads\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\..\inc/hw_types.h \
+  C:\Users\ryuic\Downloads\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\..\driverlib/debug.h \
+  C:\Users\ryuic\Downloads\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\..\driverlib/interrupt.h \
+  C:\Users\ryuic\Downloads\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\..\driverlib/ssi.h

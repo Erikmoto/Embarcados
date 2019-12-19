@@ -30,7 +30,7 @@ void UARTInit(void){
   GPIOPinTypeUART(GPIO_PORTA_BASE, GPIO_PIN_0 | GPIO_PIN_1);
 
   // Initialize the UART for console I/O.
-  UARTStdioConfig(0, 9600, SystemCoreClock);
+  UARTStdioConfig(0, 115200, SystemCoreClock);
 } // UARTInit
 
 void UART0_Handler(void){

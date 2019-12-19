@@ -1,0 +1,16 @@
+simple_uart.pbi: \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\src\system_TM4C1294.h \
+  D:\Programas\IAR\arm\inc\c\stdarg.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\utils\uartstdio.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\driverlib\pin_map.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\driverlib\systick.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\driverlib\sysctl.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\driverlib\uart.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\driverlib\gpio.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_memmap.h \
+  D:\Programas\IAR\arm\inc\c\stdbool.h \
+  D:\Programas\IAR\arm\inc\c\DLib_Product.h \
+  D:\Programas\IAR\arm\inc\c\DLib_Defaults.h \
+  D:\Programas\IAR\arm\inc\c\yvals.h D:\Programas\IAR\arm\inc\c\ycheck.h \
+  D:\Programas\IAR\arm\inc\c\stdint.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\src\simple_uart.c

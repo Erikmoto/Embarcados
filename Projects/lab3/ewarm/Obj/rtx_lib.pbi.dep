@@ -1,0 +1,18 @@
+rtx_lib.pbi: \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\src\rtx_lib.c \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\..\..\CMSIS-5.6.0\CMSIS\Core\Include\cmsis_compiler.h \
+  D:\Programas\IAR\arm\inc\c\stdint.h \
+  D:\Programas\IAR\arm\inc\c\ycheck.h D:\Programas\IAR\arm\inc\c\yvals.h \
+  D:\Programas\IAR\arm\inc\c\DLib_Defaults.h \
+  D:\\Programas\\IAR\\arm\\inc\\c\\DLib_Config_Normal.h \
+  D:\Programas\IAR\arm\inc\c\DLib_Product.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\..\..\CMSIS-5.6.0\CMSIS\Core\Include\cmsis_iccarm.h \
+  D:\Programas\IAR\arm\inc\c\iccarm_builtin.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\src/RTX_Config.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\..\..\CMSIS-5.6.0\CMSIS\RTOS2\RTX\Include\rtx_os.h \
+  D:\Programas\IAR\arm\inc\c\stddef.h \
+  D:\Programas\IAR\arm\inc\c\ysizet.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\..\..\CMSIS-5.6.0\CMSIS\RTOS2\Include\cmsis_os2.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\..\..\CMSIS-5.6.0\CMSIS\RTOS2\RTX\Include\rtx_evr.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\src\RTX_Config.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\..\..\CMSIS-5.6.0\CMSIS\RTOS2\RTX\Include/rtx_os.h

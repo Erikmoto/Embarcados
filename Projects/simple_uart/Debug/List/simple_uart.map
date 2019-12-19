@@ -1,26 +1,26 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.30.1.114/W32 for ARM                  06/Sep/2019  16:32:07
-# Copyright 2007-2018 IAR Systems AB.
+# IAR ELF Linker V8.40.1.212/W32 for ARM                  29/Nov/2019  16:52:27
+# Copyright 2007-2019 IAR Systems AB.
 #
-#    Output file  =  
-#        E:\Documents\GitHub\Embarcados\Projects\simple_uart\Debug\Exe\simple_uart.out
-#    Map file     =  
-#        E:\Documents\GitHub\Embarcados\Projects\simple_uart\Debug\List\simple_uart.map
-#    Command line =  
-#        -f C:\Users\DAELN\AppData\Local\Temp\EW1139.tmp
-#        (E:\Documents\GitHub\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\ewarm\Exe\driverlib.a
-#        E:\Documents\GitHub\Embarcados\Projects\simple_uart\Debug\Obj\simple_uart.o
-#        E:\Documents\GitHub\Embarcados\Projects\simple_uart\Debug\Obj\startup_TM4C1294.o
-#        E:\Documents\GitHub\Embarcados\Projects\simple_uart\Debug\Obj\system_TM4C1294_TW.o
-#        E:\Documents\GitHub\Embarcados\Projects\simple_uart\Debug\Obj\uartstdio.o
+#    Output file  =
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\Debug\Exe\simple_uart.out
+#    Map file     =
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\Debug\List\simple_uart.map
+#    Command line =
+#        -f C:\Users\ryuic\AppData\Local\Temp\EW61F4.tmp
+#        (C:\Users\ryuic\Downloads\Embarcados\TivaWare_C_Series-2.1.4.178\driverlib\ewarm\Exe\driverlib.a
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\Debug\Obj\simple_uart.o
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\Debug\Obj\startup_TM4C1294.o
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\Debug\Obj\system_TM4C1294_TW.o
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\Debug\Obj\uartstdio.o
 #        --no_out_extension -o
-#        E:\Documents\GitHub\Embarcados\Projects\simple_uart\Debug\Exe\simple_uart.out
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\Debug\Exe\simple_uart.out
 #        --map
-#        E:\Documents\GitHub\Embarcados\Projects\simple_uart\Debug\List\simple_uart.map
-#        --config "C:\Program Files (x86)\IAR Systems\Embedded Workbench
-#        8.1\arm\config\linker\TexasInstruments\TM4C1294NC.icf" --semihosting
-#        --entry __iar_program_start --vfe --text_out locale)
+#        C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\Debug\List\simple_uart.map
+#        --config
+#        D:\Programas\IAR\arm\config\linker\TexasInstruments\TM4C1294NC.icf
+#        --semihosting --entry __iar_program_start --vfe --text_out locale)
 #
 ###############################################################################
 
@@ -46,7 +46,7 @@ was not specified.
 *** PLACEMENT SUMMARY
 ***
 
-"A0":  place at 0x0 { ro section .intvec };
+"A0":  place at address 0x0 { ro section .intvec };
 "P1":  place in [from 0x0 to 0xf'ffff] { ro };
 define block CSTACK with size = 32K, alignment = 8 { };
 define block HEAP with size = 64K, alignment = 8 { };
@@ -144,13 +144,13 @@ command line/config:
     -----------------------------------------------
     Total:
 
-E:\Documents\GitHub\Embarcados\Projects\simple_uart\Debug\Obj: [1]
+C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\Debug\Obj: [1]
     simple_uart.o             396       32        1
     startup_TM4C1294.o        982
     system_TM4C1294_TW.o       44                 4
-    uartstdio.o             1 304       68    1 178
+    uartstdio.o             1'304       68    1'178
     -----------------------------------------------
-    Total:                  2 726      100    1 183
+    Total:                  2'726      100    1'183
 
 dl7M_tln.a: [2]
     exit.o                      4
@@ -166,7 +166,7 @@ driverlib.a: [3]
     systick.o                  40
     uart.o                    276
     -----------------------------------------------
-    Total:                  1 720      732
+    Total:                  1'720      732
 
 rt7M_tl.a: [4]
     cexit.o                    10
@@ -183,9 +183,9 @@ shb_l.a: [5]
     Total:                     20
 
     Gaps                        4
-    Linker created                      16   32 768
+    Linker created                      16   32'768
 ---------------------------------------------------
-    Grand Total:            4 628      848   33 951
+    Grand Total:            4'628      848   33'951
 
 
 *******************************************************************************
@@ -293,15 +293,15 @@ g_ui32UARTTxWriteIndex  0x2000'0480    0x4  Data  Lc  uartstdio.o [1]
 main                         0x1187   0xec  Code  Gb  simple_uart.o [1]
 
 
-[1] = E:\Documents\GitHub\Embarcados\Projects\simple_uart\Debug\Obj
+[1] = C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\Debug\Obj
 [2] = dl7M_tln.a
 [3] = driverlib.a
 [4] = rt7M_tl.a
 [5] = shb_l.a
 
-   4 628 bytes of readonly  code memory
+   4'628 bytes of readonly  code memory
      848 bytes of readonly  data memory
-  33 951 bytes of readwrite data memory
+  33'951 bytes of readwrite data memory
 
 Errors: none
 Warnings: none

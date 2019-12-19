@@ -107,6 +107,7 @@ void calcula()
 {
   //Zera as variaveis
   uint16_t t = 0;
+  uint32_t media_total;
   
   media_alto = 0;
   media_baixo = 0;
@@ -117,14 +118,19 @@ void calcula()
     media_baixo = media_baixo + (double)t_baixos[t] / TAM_VETOR;
   }
   
+  media_total = media_alto + media_baixo;
+  
   periodo_alto = media_alto * periodoTiva_ns;
   periodo_baixo = media_baixo * periodoTiva_ns;
   periodo = periodo_alto + periodo_baixo;
+  //periodo = periodo + 24000 * periodoTiva_ns;
   
   frequencia = 1000000000 / periodo;
   
   //Calcula o duty cycle
-  duty_cycle = media_alto / (media_alto + media_baixo);
+  duty_cycle = media_alto / media_total;
+  duty_cycle = (uint16_t)(duty_cycle * 10000);
+  
   /*
   if(duty_cycle >= 0.99) {
     UARTprintf("Time Out\n");
@@ -133,11 +139,10 @@ void calcula()
 }
 
 void imprime(void) {
-  duty_cycle = duty_cycle * 100;
-  duty_cycle_decimal = (uint32_t)((duty_cycle - (uint32_t)duty_cycle) * 100);
+  duty_cycle_decimal = (uint32_t)duty_cycle % 100;
   //duty_cycle = (uint8_t)duty_cycle;
   
-  UARTprintf("Duty cycle: %d,%d\%\%\n\n", (uint8_t)duty_cycle, (uint8_t)duty_cycle_decimal);
+  UARTprintf("Duty cycle: %d,%d\%\%\n\n", (uint8_t)(duty_cycle/100), (uint8_t)duty_cycle_decimal);
   UARTprintf("Periodo: %d ns\n", (uint32_t)periodo);
   UARTprintf("Frequencia: %d Hz\n", (uint32_t)frequencia);
 }
@@ -153,7 +158,7 @@ void main(void){
   
   uint32_t contagemTimeout = 0;
   uint32_t valor_ms_ns = 1000000;
-  uint32_t limite_timeout = (uint32_t)round((20 * valor_ms_ns) / periodoTiva_ns);
+  uint32_t limite_timeout = (uint32_t)round((40 * valor_ms_ns) / periodoTiva_ns);
   
   while(1){
     ativaAmostragem();

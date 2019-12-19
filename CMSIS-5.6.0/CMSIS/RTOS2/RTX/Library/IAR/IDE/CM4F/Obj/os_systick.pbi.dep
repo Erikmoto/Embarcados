@@ -1,0 +1,17 @@
+os_systick.pbi: \
+  C:\Users\ryuic\Downloads\EK-TM4C1294_RTOS_IAR8-master\CMSIS-5.6.0\CMSIS\RTOS2\Source\os_systick.c \
+  C:\Users\ryuic\Downloads\EK-TM4C1294_RTOS_IAR8-master\CMSIS-5.6.0\CMSIS\RTOS2\RTX\Library\IAR\IDE\..\..\..\..\Include\os_tick.h \
+  D:\Programas\IAR\arm\inc\c\stdint.h \
+  D:\Programas\IAR\arm\inc\c\ycheck.h D:\Programas\IAR\arm\inc\c\yvals.h \
+  D:\Programas\IAR\arm\inc\c\DLib_Defaults.h \
+  D:\\Programas\\IAR\\arm\\inc\\c\\DLib_Config_Normal.h \
+  D:\Programas\IAR\arm\inc\c\DLib_Product.h \
+  C:\Users\ryuic\Downloads\EK-TM4C1294_RTOS_IAR8-master\CMSIS-5.6.0\CMSIS\RTOS2\RTX\Library\IAR\IDE\RTE_Components.h \
+  C:\Users\ryuic\Downloads\EK-TM4C1294_RTOS_IAR8-master\CMSIS-5.6.0\CMSIS\RTOS2\RTX\Library\IAR\IDE\..\..\..\..\..\..\Device\ARM\ARMCM4\Include\ARMCM4_FP.h \
+  C:\Users\ryuic\Downloads\EK-TM4C1294_RTOS_IAR8-master\CMSIS-5.6.0\CMSIS\RTOS2\RTX\Library\IAR\IDE\..\..\..\..\..\Core\Include\core_cm4.h \
+  C:\Users\ryuic\Downloads\EK-TM4C1294_RTOS_IAR8-master\CMSIS-5.6.0\CMSIS\RTOS2\RTX\Library\IAR\IDE\..\..\..\..\..\Core\Include/cmsis_version.h \
+  C:\Users\ryuic\Downloads\EK-TM4C1294_RTOS_IAR8-master\CMSIS-5.6.0\CMSIS\RTOS2\RTX\Library\IAR\IDE\..\..\..\..\..\Core\Include/cmsis_compiler.h \
+  C:\Users\ryuic\Downloads\EK-TM4C1294_RTOS_IAR8-master\CMSIS-5.6.0\CMSIS\RTOS2\RTX\Library\IAR\IDE\..\..\..\..\..\Core\Include\cmsis_iccarm.h \
+  D:\Programas\IAR\arm\inc\c\iccarm_builtin.h \
+  C:\Users\ryuic\Downloads\EK-TM4C1294_RTOS_IAR8-master\CMSIS-5.6.0\CMSIS\RTOS2\RTX\Library\IAR\IDE\..\..\..\..\..\Core\Include/mpu_armv7.h \
+  C:\Users\ryuic\Downloads\EK-TM4C1294_RTOS_IAR8-master\CMSIS-5.6.0\CMSIS\RTOS2\RTX\Library\IAR\IDE\..\..\..\..\..\..\Device\ARM\ARMCM4\Include/system_ARMCM4.h

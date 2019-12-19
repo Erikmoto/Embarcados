@@ -1,0 +1,25 @@
+tarefas.pbi: \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\src\respostas_elevador.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\src\comandos_elevador.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\src\UARTInit.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\..\..\TivaWare_C_Series-2.1.4.178\driverlib\interrupt.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_ints.h \
+  D:\Programas\IAR\arm\inc\c\stdarg.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\..\..\TivaWare_C_Series-2.1.4.178\utils\uartstdio.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\..\..\TivaWare_C_Series-2.1.4.178\inc\hw_memmap.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\..\..\TivaWare_C_Series-2.1.4.178\driverlib\uart.h \
+  D:\Programas\IAR\arm\inc\c\ycheck.h \
+  D:\Programas\IAR\arm\inc\c\stddef.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\..\..\CMSIS-5.6.0\CMSIS\RTOS2\Include\cmsis_os2.h \
+  D:\Programas\IAR\arm\inc\c\stdint.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\src\system_tm4c1294.h \
+  D:\Programas\IAR\arm\inc\c\DLib_float_setup.h \
+  D:\Programas\IAR\arm\inc\c\math.h \
+  D:\Programas\IAR\arm\inc\c\DLib_Product_stdlib.h \
+  D:\Programas\IAR\arm\inc\c\stdlib.h \
+  D:\Programas\IAR\arm\inc\c\ysizet.h \
+  D:\Programas\IAR\arm\inc\c\DLib_Product.h \
+  D:\Programas\IAR\arm\inc\c\DLib_Defaults.h \
+  D:\Programas\IAR\arm\inc\c\yvals.h D:\Programas\IAR\arm\inc\c\stdio.h \
+  D:\Programas\IAR\arm\inc\c\stdbool.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\lab3\src\tarefas.c

@@ -15,17 +15,5 @@
     <project>
         <path>$WS_DIR$\Projects\lab3\lab3.ewp</path>
     </project>
-    <project>
-        <path>$WS_DIR$\Projects\simple_display\simple_display.ewp</path>
-    </project>
-    <project>
-        <path>$WS_DIR$\Projects\simple_io_main_sp\simple_io_main_sp.ewp</path>
-    </project>
-    <project>
-        <path>$WS_DIR$\Projects\simple_io_process_sp\simple_io_process_sp.ewp</path>
-    </project>
-    <project>
-        <path>$WS_DIR$\Projects\simple_uart\simple_uart.ewp</path>
-    </project>
     <batchBuild />
 </workspace>

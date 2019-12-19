@@ -1,0 +1,10 @@
+void envia_resposta(char* resposta, uint8_t tamanho);
+void reiniciar_elevador(char elevador);
+void abrir_elevador(char elevador);
+void fechar_elevador(char elevador);
+void subir_elevador(char elevador);
+void descer_elevador(char elevador);
+void parar_elevador(char elevador);
+void posicao_elevador(char elevador);
+void ligar_luz(char elevador, char andar);
+void desligar_luz(char elevador, char andar);

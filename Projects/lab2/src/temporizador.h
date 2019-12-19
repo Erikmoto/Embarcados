@@ -1,4 +1,4 @@
-#define TAM_VETOR (10)         //constante que determina o tamanho do vetor de leituras
+#define TAM_VETOR (1000)         //constante que determina o tamanho do vetor de leituras
 
 extern uint32_t leiturasAltos[TAM_VETOR];      //armazena a quantidade de leituras altas
 extern uint32_t leiturasBaixos[TAM_VETOR];     //armazena a quantidade de leituras baixas

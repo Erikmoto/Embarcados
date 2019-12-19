@@ -30,9 +30,6 @@ void resetaAmostragem(void) {
   indiceAltos = 0;
   indiceBaixos = 0;
   
-  TimerLoadSet(TIMER0_BASE, TIMER_A, 0);
-  TimerLoadSet(TIMER1_BASE, TIMER_A, 0);
-  
   ativaAmostragem();
 }
 
@@ -104,6 +101,9 @@ void TimerInit(void){
   
   TimerIntClear(TIMER0_BASE, TIMER_CAPA_EVENT);
   TimerIntClear(TIMER1_BASE, TIMER_CAPA_EVENT);
+  
+  TimerLoadSet(TIMER0_BASE, TIMER_A, 0);
+  TimerLoadSet(TIMER1_BASE, TIMER_A, 0);
   
   TimerEnable(TIMER0_BASE, TIMER_A);
   TimerEnable(TIMER1_BASE, TIMER_A);

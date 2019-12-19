@@ -1,0 +1,20 @@
+uartstdio.pbi: \
+  C:\Users\ryuic\Downloads\Embarcados\TivaWare_C_Series-2.1.4.178\utils\uartstdio.c \
+  D:\Programas\IAR\arm\inc\c\stdbool.h \
+  D:\Programas\IAR\arm\inc\c\stdint.h \
+  D:\Programas\IAR\arm\inc\c\ycheck.h D:\Programas\IAR\arm\inc\c\yvals.h \
+  D:\Programas\IAR\arm\inc\c\DLib_Defaults.h \
+  D:\\Programas\\IAR\\arm\\inc\\c\\DLib_Config_Normal.h \
+  D:\Programas\IAR\arm\inc\c\DLib_Product.h \
+  D:\Programas\IAR\arm\inc\c\stdarg.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\inc/hw_ints.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\inc/hw_memmap.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\inc/hw_types.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\inc/hw_uart.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\driverlib/debug.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\driverlib/interrupt.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\driverlib/rom.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\driverlib/rom_map.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\driverlib/sysctl.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\driverlib/uart.h \
+  C:\Users\ryuic\Downloads\Embarcados\Projects\simple_uart\..\..\TivaWare_C_Series-2.1.4.178\utils/uartstdio.h
